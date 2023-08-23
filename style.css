@@ -74,11 +74,9 @@ h3 {
 }
 
 #block1:active, #block2:active, #block3:active, #block4:active, #block5:active, #block6:active, #block7:active, #block8:active, #block9:active, #block10:active, #block11:active, #block12:active, #block13:active, #block14:active, #block15:active, #block16:active {
-    box-shadow: box-shadow:
+    box-shadow:
       7px 6px 28px 1px rgba(0, 0, 0, 0.24);
     transform: translate(2px, 2px);
-    transform: 
-    /* Moving button 4px to y-axis */
 }
 
 /* #block11, #block12, #block13, #block14, #block15 {
