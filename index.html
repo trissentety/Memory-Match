@@ -33,7 +33,7 @@
     <div id="block16"></div>
 </div>
 <div id="prompt"><h3></h3></div>
-<div id="info"><h2>Click start to begin! watch the buttons light up and after click them in correct order.</h2></div>
+<div id="info"><h2>Click start or Spacebar to begin! watch the buttons light up and after click them in correct order.</h2></div>
 
 <!-- 
 <div id="blockholder1">
@@ -85,7 +85,7 @@ function lose() {
         return b - a;
     }
     if ((array1.length - 1) > array1[0]) {
-        document.getElementById("prompt").innerHTML = "New highest Score!"
+        document.getElementById("prompt").innerHTML = "New Highest Score!"
     } else {
         var myTimeout = setTimeout(function () {document.getElementById("prompt").innerHTML = "Game Over"}, 10);
         var myTimeout = setTimeout(function () {document.getElementById("prompt").innerHTML = ""}, 5000);
@@ -110,6 +110,29 @@ document.getElementById("showNumbers").addEventListener("click", function () {
     click = 0;
     funcy();
 })
+
+document.addEventListener("keydown", function(event) {
+  if (event.keyCode == 32) {
+    document.getElementById("showNumbers").style.backgroundColor = "grey"
+    document.getElementById("showNumbers").style.color = "rgb(40,40,40)"
+    document.getElementById("showNumbers").style.border = "2px solid rgb(40,40,40)"
+   
+    array2 = []
+    click = 0;
+    funcy();
+  }
+});
+document.addEventListener("keyup", function(event) {
+  if (event.keyCode == 32) {
+    document.getElementById("showNumbers").style.backgroundColor = "rgb(45,45,45)"
+    document.getElementById("showNumbers").style.color = "grey"
+    document.getElementById("showNumbers").style.border = "2px solid grey"
+   
+    array2 = []
+    click = 0;
+    funcy();
+  }
+});
 
 function nextRound() {
     if (array1.toString() === array2.toString()) {
