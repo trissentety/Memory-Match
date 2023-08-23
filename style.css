@@ -123,7 +123,7 @@ h3 {
     font-size: 20px;
     height: 350px;
     position: absolute;
-    top: 300px;
+    top: 320px;
     left: 15px;
     border: none;
 
@@ -133,6 +133,20 @@ h3 {
 
 #info {
     color: orange;
+}
+
+#rateContainer {
+    display: flex;
+    justify-content: space-evenly;
+    color: grey;
+}
+
+#rateChangerL, #rateChangerR {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100px;
+    color: grey;
+    cursor: pointer;
 }
 
 #score {
