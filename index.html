@@ -5,6 +5,11 @@
 </head>
 <body id="boody"></body>
 <h1>Memory Match</h1>
+<div id="rateContainer">
+    <div id="rateChangerL"><p>Slower</p></div>
+    <div id="rateChangerR"><p>Faster</p></div>
+</div>
+
 <h2 id="score"><p></p></h2>
 <textarea id="highscore">High Scores:         </textarea>
 <div id="showNumbers"><p>Start</p></div>
@@ -70,6 +75,27 @@ var block2 = document.getElementById("block2");
 var block3 = document.getElementById("block3");
 var block4 = document.getElementById("block4");
 var block5 = document.getElementById("block5");
+var rateL = document.getElementById("rateChangerL");
+var rateR = document.getElementById("rateChangerR");
+
+rateL.addEventListener("click", function () {
+    if (rate > 0) {
+        rate--
+    }
+    if (rate == 3) {
+        rateR.style.color = "grey"
+    }
+
+})
+
+rateR.addEventListener("click", function () {
+    if (rate < 5) {
+        rate++
+    }
+    if (rate == 4) {
+        rateR.style.color = "red"
+    }
+})
 
 
 var array1 = [1]
@@ -175,6 +201,7 @@ function nextRound() {
         array1.push([power]);
     }
 }
+var rate = 1;
 var starter = 1
 function funcy(varr) {
     document.getElementById('score').innerHTML = `Score: `  + `${array1.length -1}`
@@ -184,7 +211,89 @@ function funcy(varr) {
         array1.push([power]); 
     }
         //function
-         var interval = 403; // how much time should the delay between two iterations be (in milliseconds)?
+
+        if (rate == 0) {
+            var interval = 1253; // how much time should the delay between two iterations be (in milliseconds)?
+         var promise = Promise.resolve(); 
+         
+         array1.forEach(function (el) {
+             promise = promise.then(function () {
+                 console.log(el);
+            if( el == 1) {
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 2) {
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 3) {
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 1000); 
+            }
+            if( el == 4) {
+
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 1000); 
+            }
+            if( el == 5) {
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 6) {
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 7) {
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 8) {
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 9) {
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 10) {
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 11) {
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 12) {
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 13) {
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 14) {
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 15) {
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            if( el == 16) {
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 100);
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 1000);
+            }
+            
+            return new Promise(function (resolve) {
+            setTimeout(resolve, interval);
+            });
+            console.log(array1);
+        });
+    })
+        }
+        if (rate == 1) {
+            var interval = 403; // how much time should the delay between two iterations be (in milliseconds)?
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
@@ -262,6 +371,251 @@ function funcy(varr) {
             console.log(array1);
         });
     })
+        }
+
+        if (rate == 2) {
+            var interval = 253; // how much time should the delay between two iterations be (in milliseconds)?
+         var promise = Promise.resolve(); 
+         
+         array1.forEach(function (el) {
+             promise = promise.then(function () {
+                 console.log(el);
+            if( el == 1) {
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 2) {
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 3) {
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 250); 
+            }
+            if( el == 4) {
+
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 250); 
+            }
+            if( el == 5) {
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 6) {
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 7) {
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 8) {
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 9) {
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 10) {
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 11) {
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 12) {
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 13) {
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 14) {
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 15) {
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            if( el == 16) {
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 20);
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 250);
+            }
+            
+            return new Promise(function (resolve) {
+            setTimeout(resolve, interval);
+            });
+            console.log(array1);
+        });
+    })
+        }
+
+        if (rate == 3) {
+            var interval = 203; // how much time should the delay between two iterations be (in milliseconds)?
+         var promise = Promise.resolve(); 
+         
+         array1.forEach(function (el) {
+             promise = promise.then(function () {
+                 console.log(el);
+            if( el == 1) {
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 2) {
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 3) {
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 200); 
+            }
+            if( el == 4) {
+
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 200); 
+            }
+            if( el == 5) {
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 6) {
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 7) {
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 8) {
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 9) {
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 10) {
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 11) {
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 12) {
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 13) {
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 14) {
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 15) {
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            if( el == 16) {
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 200);
+            }
+            
+            return new Promise(function (resolve) {
+            setTimeout(resolve, interval);
+            });
+            console.log(array1);
+        });
+    })
+        }
+
+        if (rate == 4) {
+            var interval = 123; // how much time should the delay between two iterations be (in milliseconds)?
+         var promise = Promise.resolve(); 
+         
+         array1.forEach(function (el) {
+             promise = promise.then(function () {
+                 console.log(el);
+            if( el == 1) {
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 2) {
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 3) {
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 120); 
+            }
+            if( el == 4) {
+
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 120); 
+            }
+            if( el == 5) {
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 6) {
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 7) {
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 8) {
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 9) {
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 10) {
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 10);
+                var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 11) {
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 12) {
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 13) {
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 14) {
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 15) {
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            if( el == 16) {
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 30);
+                var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 120);
+            }
+            
+            return new Promise(function (resolve) {
+            setTimeout(resolve, interval);
+            });
+            console.log(array1);
+        });
+    })
+        }
+
         var a1p = 0
         var click=0;
 }
@@ -282,7 +636,7 @@ function funcy(varr) {
                 array2.splice(13,1,1)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -293,7 +647,7 @@ function funcy(varr) {
                 array2.splice(12,1,1)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -304,7 +658,7 @@ function funcy(varr) {
                 array2.splice(11,1,1)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -315,7 +669,7 @@ function funcy(varr) {
                 array2.splice(10,1,1)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -326,7 +680,7 @@ function funcy(varr) {
                 array2.splice(9,1,1)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -337,7 +691,7 @@ function funcy(varr) {
                 array2.splice(8,1,1)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -348,7 +702,7 @@ function funcy(varr) {
                 array2.splice(7,1,1)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -359,7 +713,7 @@ function funcy(varr) {
                 array2.splice(6,1,1)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -370,7 +724,7 @@ function funcy(varr) {
                 array2.splice(5,1,1)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -381,7 +735,7 @@ function funcy(varr) {
                 array2.splice(4,1,1)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -392,7 +746,7 @@ function funcy(varr) {
                 array2.splice(3,1,1)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -403,7 +757,7 @@ function funcy(varr) {
                 array2.splice(2,1,1)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -414,7 +768,7 @@ function funcy(varr) {
                 array2.splice(1,1,1)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[1] != array2[1] && click == 2) {
@@ -424,7 +778,7 @@ function funcy(varr) {
             console.log("level 1 splice")
             array2.splice(0,1,1)
             var myTimeout = setTimeout(function () {block1.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block1.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block1.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -443,7 +797,7 @@ function funcy(varr) {
                 array2.splice(13,1,2)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -454,7 +808,7 @@ function funcy(varr) {
                 array2.splice(12,1,2)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -465,7 +819,7 @@ function funcy(varr) {
                 array2.splice(11,1,2)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -476,7 +830,7 @@ function funcy(varr) {
                 array2.splice(10,1,2)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -487,7 +841,7 @@ function funcy(varr) {
                 array2.splice(9,1,2)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -498,7 +852,7 @@ function funcy(varr) {
                 array2.splice(8,1,2)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -509,7 +863,7 @@ function funcy(varr) {
                 array2.splice(7,1,2)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -520,7 +874,7 @@ function funcy(varr) {
                 array2.splice(6,1,2)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -531,7 +885,7 @@ function funcy(varr) {
                 array2.splice(5,1,2)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -542,7 +896,7 @@ function funcy(varr) {
                 array2.splice(4,1,2)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -553,7 +907,7 @@ function funcy(varr) {
                 array2.splice(3,1,2)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -564,7 +918,7 @@ function funcy(varr) {
                 array2.splice(2,1,2)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -575,7 +929,7 @@ function funcy(varr) {
                 array2.splice(1,1,2)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[1] != array2[1] && click == 2) {
@@ -585,7 +939,7 @@ function funcy(varr) {
             console.log("level 1 splice")
             array2.splice(0,1,2)
             var myTimeout = setTimeout(function () {block2.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block2.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block2.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -604,7 +958,7 @@ function funcy(varr) {
                 array2.splice(13,1,3)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -615,7 +969,7 @@ function funcy(varr) {
                 array2.splice(12,1,3)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -626,7 +980,7 @@ function funcy(varr) {
                 array2.splice(11,1,3)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -637,7 +991,7 @@ function funcy(varr) {
                 array2.splice(10,1,3)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -648,7 +1002,7 @@ function funcy(varr) {
                 array2.splice(9,1,3)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -659,7 +1013,7 @@ function funcy(varr) {
                 array2.splice(8,1,3)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -670,7 +1024,7 @@ function funcy(varr) {
                 array2.splice(7,1,3)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -682,7 +1036,7 @@ nextRound();
                 array2.splice(6,1,3)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -694,7 +1048,7 @@ nextRound();
                 array2.splice(5,1,3)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -706,7 +1060,7 @@ nextRound();
                 array2.splice(4,1,3)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -718,7 +1072,7 @@ nextRound();
                 array2.splice(3,1,3)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -730,7 +1084,7 @@ nextRound();
                 array2.splice(2,1,3)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -742,7 +1096,7 @@ nextRound();
                 array2.splice(1,1,3)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
 nextRound();
@@ -754,7 +1108,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,3)
             var myTimeout = setTimeout(function () {block3.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block3.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block3.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -776,7 +1130,7 @@ nextRound();
                 array2.splice(13,1,4)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -787,7 +1141,7 @@ nextRound();
                 array2.splice(12,1,4)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -798,7 +1152,7 @@ nextRound();
                 array2.splice(11,1,4)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -809,7 +1163,7 @@ nextRound();
                 array2.splice(10,1,4)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -820,7 +1174,7 @@ nextRound();
                 array2.splice(9,1,4)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -832,7 +1186,7 @@ nextRound();
                 array2.splice(8,1,4)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -844,7 +1198,7 @@ nextRound();
                 array2.splice(7,1,4)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -856,7 +1210,7 @@ nextRound();
                 array2.splice(6,1,4)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -868,7 +1222,7 @@ nextRound();
                 array2.splice(5,1,4)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {bloc4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -880,7 +1234,7 @@ nextRound();
                 array2.splice(4,1,4)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -892,7 +1246,7 @@ nextRound();
                 array2.splice(3,1,4)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -904,7 +1258,7 @@ nextRound();
                 array2.splice(2,1,4)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -916,7 +1270,7 @@ nextRound();
                 array2.splice(1,1,4)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
 nextRound();
@@ -928,7 +1282,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,4)
             var myTimeout = setTimeout(function () {block4.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block4.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block4.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -950,7 +1304,7 @@ nextRound();
                 array2.splice(13,1,5)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -961,7 +1315,7 @@ nextRound();
                 array2.splice(12,1,5)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -972,7 +1326,7 @@ nextRound();
                 array2.splice(11,1,5)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -983,7 +1337,7 @@ nextRound();
                 array2.splice(10,1,5)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -994,7 +1348,7 @@ nextRound();
                 array2.splice(9,1,5)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1006,7 +1360,7 @@ nextRound();
                 array2.splice(8,1,5)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1018,7 +1372,7 @@ nextRound();
                 array2.splice(7,1,5)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1030,7 +1384,7 @@ nextRound();
                 array2.splice(6,1,5)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1042,7 +1396,7 @@ nextRound();
                 array2.splice(5,1,5)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1054,7 +1408,7 @@ nextRound();
                 array2.splice(4,1,5)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1066,7 +1420,7 @@ nextRound();
                 array2.splice(3,1,5)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1078,7 +1432,7 @@ nextRound();
                 array2.splice(2,1,5)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1090,7 +1444,7 @@ nextRound();
                 array2.splice(1,1,5)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
 nextRound();
@@ -1102,7 +1456,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,5)
                 var myTimeout = setTimeout(function () {block5.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block5.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block5.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -1124,7 +1478,7 @@ nextRound();
                 array2.splice(13,1,6)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -1135,7 +1489,7 @@ nextRound();
                 array2.splice(12,1,6)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -1146,7 +1500,7 @@ nextRound();
                 array2.splice(11,1,6)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -1157,7 +1511,7 @@ nextRound();
                 array2.splice(10,1,6)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -1168,7 +1522,7 @@ nextRound();
                 array2.splice(9,1,6)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1180,7 +1534,7 @@ nextRound();
                 array2.splice(8,1,6)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1192,7 +1546,7 @@ nextRound();
                 array2.splice(7,1,6)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1204,7 +1558,7 @@ nextRound();
                 array2.splice(6,1,6)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1216,7 +1570,7 @@ nextRound();
                 array2.splice(5,1,6)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1228,7 +1582,7 @@ nextRound();
                 array2.splice(4,1,6)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1240,7 +1594,7 @@ nextRound();
                 array2.splice(3,1,6)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1252,7 +1606,7 @@ nextRound();
                 array2.splice(2,1,6)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
 nextRound();
             }
@@ -1264,7 +1618,7 @@ nextRound();
                 array2.splice(1,1,6)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
 nextRound();
@@ -1276,7 +1630,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,6)
                 var myTimeout = setTimeout(function () {block6.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block6.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block6.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -1298,7 +1652,7 @@ nextRound();
                 array2.splice(13,1,7)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -1309,7 +1663,7 @@ nextRound();
                 array2.splice(12,1,7)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -1320,7 +1674,7 @@ nextRound();
                 array2.splice(11,1,7)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -1331,7 +1685,7 @@ nextRound();
                 array2.splice(10,1,7)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -1342,7 +1696,7 @@ nextRound();
                 array2.splice(9,1,7)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -1353,7 +1707,7 @@ nextRound();
                 array2.splice(8,1,7)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -1364,7 +1718,7 @@ nextRound();
                 array2.splice(7,1,7)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -1375,7 +1729,7 @@ nextRound();
                 array2.splice(6,1,7)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -1386,7 +1740,7 @@ nextRound();
                 array2.splice(5,1,7)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -1397,7 +1751,7 @@ nextRound();
                 array2.splice(4,1,7)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -1408,7 +1762,7 @@ nextRound();
                 array2.splice(3,1,7)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -1419,7 +1773,7 @@ nextRound();
                 array2.splice(2,1,7)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -1430,7 +1784,7 @@ nextRound();
                 array2.splice(1,1,7)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -1442,7 +1796,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,7)
             var myTimeout = setTimeout(function () {block7.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block7.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block7.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -1464,7 +1818,7 @@ nextRound();
                 array2.splice(13,1,8)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -1475,7 +1829,7 @@ nextRound();
                 array2.splice(12,1,8)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -1486,7 +1840,7 @@ nextRound();
                 array2.splice(11,1,8)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -1497,7 +1851,7 @@ nextRound();
                 array2.splice(10,1,8)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -1508,7 +1862,7 @@ nextRound();
                 array2.splice(9,1,8)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -1519,7 +1873,7 @@ nextRound();
                 array2.splice(8,1,8)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -1530,7 +1884,7 @@ nextRound();
                 array2.splice(7,1,8)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -1541,7 +1895,7 @@ nextRound();
                 array2.splice(6,1,8)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -1552,7 +1906,7 @@ nextRound();
                 array2.splice(5,1,8)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -1563,7 +1917,7 @@ nextRound();
                 array2.splice(4,1,8)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -1574,7 +1928,7 @@ nextRound();
                 array2.splice(3,1,8)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -1585,7 +1939,7 @@ nextRound();
                 array2.splice(2,1,8)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -1596,7 +1950,7 @@ nextRound();
                 array2.splice(1,1,8)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -1608,7 +1962,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,8)
             var myTimeout = setTimeout(function () {block8.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block8.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block8.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -1630,7 +1984,7 @@ nextRound();
                 array2.splice(13,1,9)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -1641,7 +1995,7 @@ nextRound();
                 array2.splice(12,1,9)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -1652,7 +2006,7 @@ nextRound();
                 array2.splice(11,1,9)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -1663,7 +2017,7 @@ nextRound();
                 array2.splice(10,1,9)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -1674,7 +2028,7 @@ nextRound();
                 array2.splice(9,1,9)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -1685,7 +2039,7 @@ nextRound();
                 array2.splice(8,1,9)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -1696,7 +2050,7 @@ nextRound();
                 array2.splice(7,1,9)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -1707,7 +2061,7 @@ nextRound();
                 array2.splice(6,1,9)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -1718,7 +2072,7 @@ nextRound();
                 array2.splice(5,1,9)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -1729,7 +2083,7 @@ nextRound();
                 array2.splice(4,1,9)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -1740,7 +2094,7 @@ nextRound();
                 array2.splice(3,1,9)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -1751,7 +2105,7 @@ nextRound();
                 array2.splice(2,1,9)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -1762,7 +2116,7 @@ nextRound();
                 array2.splice(1,1,9)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -1774,7 +2128,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,9)
             var myTimeout = setTimeout(function () {block9.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block9.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block9.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -1796,7 +2150,7 @@ nextRound();
                 array2.splice(13,1,10)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -1807,7 +2161,7 @@ nextRound();
                 array2.splice(12,1,10)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -1818,7 +2172,7 @@ nextRound();
                 array2.splice(11,1,10)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -1829,7 +2183,7 @@ nextRound();
                 array2.splice(10,1,10)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -1840,7 +2194,7 @@ nextRound();
                 array2.splice(9,1,10)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -1851,7 +2205,7 @@ nextRound();
                 array2.splice(8,1,10)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -1862,7 +2216,7 @@ nextRound();
                 array2.splice(7,1,10)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -1873,7 +2227,7 @@ nextRound();
                 array2.splice(6,1,10)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -1884,7 +2238,7 @@ nextRound();
                 array2.splice(5,1,10)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -1895,7 +2249,7 @@ nextRound();
                 array2.splice(4,1,10)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -1906,7 +2260,7 @@ nextRound();
                 array2.splice(3,1,10)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -1917,7 +2271,7 @@ nextRound();
                 array2.splice(2,1,10)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -1928,7 +2282,7 @@ nextRound();
                 array2.splice(1,1,10)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -1940,7 +2294,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,10)
             var myTimeout = setTimeout(function () {block10.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block10.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block10.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -1962,7 +2316,7 @@ nextRound();
                 array2.splice(13,1,11)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -1973,7 +2327,7 @@ nextRound();
                 array2.splice(12,1,11)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -1984,7 +2338,7 @@ nextRound();
                 array2.splice(11,1,11)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -1995,7 +2349,7 @@ nextRound();
                 array2.splice(10,1,11)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -2006,7 +2360,7 @@ nextRound();
                 array2.splice(9,1,11)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -2017,7 +2371,7 @@ nextRound();
                 array2.splice(8,1,11)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -2028,7 +2382,7 @@ nextRound();
                 array2.splice(7,1,11)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -2039,7 +2393,7 @@ nextRound();
                 array2.splice(6,1,11)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -2050,7 +2404,7 @@ nextRound();
                 array2.splice(5,1,11)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -2061,7 +2415,7 @@ nextRound();
                 array2.splice(4,1,11)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -2072,7 +2426,7 @@ nextRound();
                 array2.splice(3,1,11)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -2083,7 +2437,7 @@ nextRound();
                 array2.splice(2,1,11)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -2094,7 +2448,7 @@ nextRound();
                 array2.splice(1,1,11)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -2106,7 +2460,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,11)
             var myTimeout = setTimeout(function () {block11.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block11.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block11.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -2128,7 +2482,7 @@ nextRound();
                 array2.splice(13,1,12)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -2139,7 +2493,7 @@ nextRound();
                 array2.splice(12,1,12)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -2150,7 +2504,7 @@ nextRound();
                 array2.splice(11,1,12)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -2161,7 +2515,7 @@ nextRound();
                 array2.splice(10,1,12)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -2172,7 +2526,7 @@ nextRound();
                 array2.splice(9,1,12)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -2183,7 +2537,7 @@ nextRound();
                 array2.splice(8,1,12)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -2194,7 +2548,7 @@ nextRound();
                 array2.splice(7,1,12)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -2205,7 +2559,7 @@ nextRound();
                 array2.splice(6,1,12)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -2216,7 +2570,7 @@ nextRound();
                 array2.splice(5,1,12)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -2227,7 +2581,7 @@ nextRound();
                 array2.splice(4,1,12)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -2238,7 +2592,7 @@ nextRound();
                 array2.splice(3,1,12)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -2249,7 +2603,7 @@ nextRound();
                 array2.splice(2,1,12)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -2260,7 +2614,7 @@ nextRound();
                 array2.splice(1,1,12)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -2272,7 +2626,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,12)
             var myTimeout = setTimeout(function () {block12.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block12.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block12.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -2294,7 +2648,7 @@ nextRound();
                 array2.splice(13,1,13)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -2305,7 +2659,7 @@ nextRound();
                 array2.splice(12,1,13)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -2316,7 +2670,7 @@ nextRound();
                 array2.splice(11,1,13)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -2327,7 +2681,7 @@ nextRound();
                 array2.splice(10,1,13)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -2338,7 +2692,7 @@ nextRound();
                 array2.splice(9,1,13)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -2349,7 +2703,7 @@ nextRound();
                 array2.splice(8,1,13)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -2360,7 +2714,7 @@ nextRound();
                 array2.splice(7,1,13)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -2371,7 +2725,7 @@ nextRound();
                 array2.splice(6,1,13)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -2382,7 +2736,7 @@ nextRound();
                 array2.splice(5,1,13)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -2393,7 +2747,7 @@ nextRound();
                 array2.splice(4,1,13)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -2404,7 +2758,7 @@ nextRound();
                 array2.splice(3,1,13)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -2415,7 +2769,7 @@ nextRound();
                 array2.splice(2,1,13)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -2426,7 +2780,7 @@ nextRound();
                 array2.splice(1,1,13)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -2438,7 +2792,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,13)
             var myTimeout = setTimeout(function () {block13.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block13.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block13.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -2460,7 +2814,7 @@ nextRound();
                 array2.splice(13,1,14)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -2471,7 +2825,7 @@ nextRound();
                 array2.splice(12,1,14)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -2482,7 +2836,7 @@ nextRound();
                 array2.splice(11,1,14)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -2493,7 +2847,7 @@ nextRound();
                 array2.splice(10,1,14)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -2504,7 +2858,7 @@ nextRound();
                 array2.splice(9,1,14)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -2515,7 +2869,7 @@ nextRound();
                 array2.splice(8,1,14)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -2526,7 +2880,7 @@ nextRound();
                 array2.splice(7,1,14)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -2537,7 +2891,7 @@ nextRound();
                 array2.splice(6,1,14)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -2548,7 +2902,7 @@ nextRound();
                 array2.splice(5,1,14)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -2559,7 +2913,7 @@ nextRound();
                 array2.splice(4,1,14)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -2570,7 +2924,7 @@ nextRound();
                 array2.splice(3,1,14)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -2581,7 +2935,7 @@ nextRound();
                 array2.splice(2,1,14)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -2592,7 +2946,7 @@ nextRound();
                 array2.splice(1,1,14)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -2604,7 +2958,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,14)
             var myTimeout = setTimeout(function () {block14.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block14.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block14.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -2626,7 +2980,7 @@ nextRound();
                 array2.splice(13,1,15)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -2637,7 +2991,7 @@ nextRound();
                 array2.splice(12,1,15)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -2648,7 +3002,7 @@ nextRound();
                 array2.splice(11,1,15)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -2659,7 +3013,7 @@ nextRound();
                 array2.splice(10,1,15)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -2670,7 +3024,7 @@ nextRound();
                 array2.splice(9,1,15)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -2681,7 +3035,7 @@ nextRound();
                 array2.splice(8,1,15)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -2692,7 +3046,7 @@ nextRound();
                 array2.splice(7,1,15)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -2703,7 +3057,7 @@ nextRound();
                 array2.splice(6,1,15)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -2714,7 +3068,7 @@ nextRound();
                 array2.splice(5,1,15)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -2725,7 +3079,7 @@ nextRound();
                 array2.splice(4,1,15)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -2736,7 +3090,7 @@ nextRound();
                 array2.splice(3,1,15)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -2747,7 +3101,7 @@ nextRound();
                 array2.splice(2,1,15)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -2758,7 +3112,7 @@ nextRound();
                 array2.splice(1,1,15)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -2770,7 +3124,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,15)
             var myTimeout = setTimeout(function () {block15.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block15.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block15.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
@@ -2792,7 +3146,7 @@ nextRound();
                 array2.splice(13,1,16)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[13] != array2[13] && click == 14) {
@@ -2803,7 +3157,7 @@ nextRound();
                 array2.splice(12,1,16)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[12] != array2[12] && click == 13) {
@@ -2814,7 +3168,7 @@ nextRound();
                 array2.splice(11,1,16)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[11] != array2[11] && click == 12) {
@@ -2825,7 +3179,7 @@ nextRound();
                 array2.splice(10,1,16)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
                 nextRound();
             }
             if (array1[10] != array2[10] && click == 11) {
@@ -2836,7 +3190,7 @@ nextRound();
                 array2.splice(9,1,16)
                 console.log('level 10 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[9] != array2[9] && click == 10) {
@@ -2847,7 +3201,7 @@ nextRound();
                 array2.splice(8,1,16)
                 console.log('level 9 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[8] != array2[8] && click == 9) {
@@ -2858,7 +3212,7 @@ nextRound();
                 array2.splice(7,1,16)
                 console.log('level 8 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[7] != array2[7] && click == 8) {
@@ -2869,7 +3223,7 @@ nextRound();
                 array2.splice(6,1,16)
                 console.log('level 7 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[6] != array2[6] && click == 7) {
@@ -2880,7 +3234,7 @@ nextRound();
                 array2.splice(5,1,16)
                 console.log('level 6 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[5] != array2[5] && click == 6) {
@@ -2891,7 +3245,7 @@ nextRound();
                 array2.splice(4,1,16)
                 console.log('level 5 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[4] != array2[4] && click == 5) {
@@ -2902,7 +3256,7 @@ nextRound();
                 array2.splice(3,1,16)
                 console.log('level 4 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[3] != array2[3] && click == 4) {
@@ -2913,7 +3267,7 @@ nextRound();
                 array2.splice(2,1,16)
                 console.log('level 3 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
             }
             if (array1[2] != array2[2] && click == 3) {
@@ -2924,7 +3278,7 @@ nextRound();
                 array2.splice(1,1,16)
                 console.log('level 2 splice')
                 var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-                var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+                var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
 nextRound();
                 console.log(`array2[0]${array2[0]}`)
                 console.log(`array2[1]${array2[1]}`)
@@ -2936,7 +3290,7 @@ nextRound();
             console.log("level 1 splice")
             array2.splice(0,1,16)
             var myTimeout = setTimeout(function () {block16.style.border="3px solid cyan"}, 1);
-            var myTimeout = setTimeout(function () {block16.style.border="3px solid rgb(125, 13, 236)"}, 200);
+            var myTimeout = setTimeout(function () {block16.style.border= "3px solid rgb(157, 95, 219)"}, 200);
             click++;
             }
             if (array1[0] == array2[0] && click == 1) {
