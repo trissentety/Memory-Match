@@ -113,6 +113,7 @@ document.getElementById("showNumbers").addEventListener("click", function () {
 
 document.addEventListener("keydown", function(event) {
     if (event.keyCode == 13) {
+    document.getElementById("info").style.display = "none";
     document.getElementById("showNumbers").style.backgroundColor = "rgb(60,60,60)"
     document.getElementById("showNumbers").style.color = "grey"
     array2 = []
@@ -131,6 +132,7 @@ document.addEventListener("keyup", function(event) {
 });
 document.addEventListener("keydown", function(event) {
   if (event.keyCode == 32) {
+    document.getElementById("info").style.display = "none";
     document.getElementById("showNumbers").style.backgroundColor = "rgb(60,60,60)"
     document.getElementById("showNumbers").style.color = "grey"
     array2 = []
@@ -159,6 +161,7 @@ showNumbers.addEventListener("mouseout", function(event) {
 });
 
 showNumbers.addEventListener("click", function(event) {
+    document.getElementById("info").style.display = "none";
     document.getElementById("showNumbers").style.backgroundColor = "rgb(45,45,45)"
     document.getElementById("showNumbers").style.color = "grey"
     array2 = []
