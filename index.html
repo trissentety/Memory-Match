@@ -112,11 +112,27 @@ document.getElementById("showNumbers").addEventListener("click", function () {
 })
 
 document.addEventListener("keydown", function(event) {
+    if (event.keyCode == 13) {
+    document.getElementById("showNumbers").style.backgroundColor = "rgb(60,60,60)"
+    document.getElementById("showNumbers").style.color = "grey"
+    array2 = []
+    click = 0;
+    funcy();
+  }
+});
+document.addEventListener("keyup", function(event) {
+  if (event.keyCode == 13) {
+    document.getElementById("showNumbers").style.backgroundColor = "rgb(45,45,45)"
+    document.getElementById("showNumbers").style.color = "grey" 
+    array2 = []
+    click = 0;
+    funcy();
+  }
+});
+document.addEventListener("keydown", function(event) {
   if (event.keyCode == 32) {
-    document.getElementById("showNumbers").style.backgroundColor = "grey"
-    document.getElementById("showNumbers").style.color = "rgb(40,40,40)"
-    document.getElementById("showNumbers").style.border = "2px solid rgb(40,40,40)"
-   
+    document.getElementById("showNumbers").style.backgroundColor = "rgb(60,60,60)"
+    document.getElementById("showNumbers").style.color = "grey"
     array2 = []
     click = 0;
     funcy();
@@ -125,13 +141,29 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("keyup", function(event) {
   if (event.keyCode == 32) {
     document.getElementById("showNumbers").style.backgroundColor = "rgb(45,45,45)"
-    document.getElementById("showNumbers").style.color = "grey"
-    document.getElementById("showNumbers").style.border = "2px solid grey"
-   
+    document.getElementById("showNumbers").style.color = "grey" 
     array2 = []
     click = 0;
     funcy();
   }
+});
+var showNumbers = document.getElementById("showNumbers")
+showNumbers.addEventListener("mouseover", function(event) {
+    document.getElementById("showNumbers").style.backgroundColor = "rgb(60,60,60)"
+    document.getElementById("showNumbers").style.color = "grey"
+});
+
+showNumbers.addEventListener("mouseout", function(event) {
+    document.getElementById("showNumbers").style.backgroundColor = "rgb(45,45,45)"
+    document.getElementById("showNumbers").style.color = "grey"
+});
+
+showNumbers.addEventListener("click", function(event) {
+    document.getElementById("showNumbers").style.backgroundColor = "rgb(45,45,45)"
+    document.getElementById("showNumbers").style.color = "grey"
+    array2 = []
+    click = 0;
+    funcy();
 });
 
 function nextRound() {
