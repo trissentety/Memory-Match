@@ -112,7 +112,6 @@ var aa= 0;
 fries = 0;
 infoCheck = 0;
 function lose() {
-    document.getElementById('Possibilities').innerHTML = `16 Possibilities`;
     array3.sort(compareFunction);
     function compareFunction(a, b) {
         return b - a;
@@ -305,6 +304,9 @@ var starter = 1
 function funcy(varr) {
     document.getElementById('prompt2').innerHTML = ""
     document.getElementById("prompt").innerHTML = "";
+    if (array1.length == 1  ) {
+        document.getElementById('Possibilities').innerHTML = possibilities[0] +' Possibilities';
+    }
     if (array1.length == 2  ) {
         document.getElementById('Possibilities').innerHTML = possibilities[1] +' Possibilities';
     }
