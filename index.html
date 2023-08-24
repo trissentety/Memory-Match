@@ -121,6 +121,9 @@ function lose() {
     function compareFunction(a, b) {
         return b - a;
     }
+    if (array3 === -1) {
+        array3.splice(0,1);
+    }
     document.getElementById("highscore").innerHTML = "High Scores: \n";
     array3.forEach(function(val, i, arr) {
         document.getElementById("highscore").innerHTML += (i + 1) + "): " + val + "\n"
@@ -245,7 +248,7 @@ function funcy(varr) {
         //function
 
         if (rate == 0) {
-            var interval = 1253; // how much time should the delay between two iterations be (in milliseconds)?
+            var interval = 1253;
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
@@ -325,7 +328,7 @@ function funcy(varr) {
     })
         }
         if (rate == 1) {
-            var interval = 403; // how much time should the delay between two iterations be (in milliseconds)?
+            var interval = 403;
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
@@ -406,7 +409,7 @@ function funcy(varr) {
         }
 
         if (rate == 2) {
-            var interval = 253; // how much time should the delay between two iterations be (in milliseconds)?
+            var interval = 253;
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
@@ -487,7 +490,7 @@ function funcy(varr) {
         }
 
         if (rate == 3) {
-            var interval = 203; // how much time should the delay between two iterations be (in milliseconds)?
+            var interval = 203;
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
@@ -568,7 +571,7 @@ function funcy(varr) {
         }
 
         if (rate == 4) {
-            var interval = 123; // how much time should the delay between two iterations be (in milliseconds)?
+            var interval = 123;
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
