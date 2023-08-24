@@ -39,6 +39,7 @@
     <div id="block16"></div>
 </div>
 <div id="prompt"><h3></h3></div>
+<div id="prompt2"><h3></h3></div>
 <div id="info"><h2>Click start or Spacebar to begin! watch the buttons light up and after click them in correct order.</h2></div>
 
 <!-- 
@@ -116,8 +117,10 @@ function lose() {
     document.getElementById("prompt").innerHTML = "Game Over"
     
     
-    if (array1.length > array1[0]) {
-        document.getElementById("prompt").innerHTML = "New Highest Score!"
+
+    if ((array1.length - 1) > array3[0]) {
+        document.getElementById("prompt2").innerHTML = "New Highest Score!"
+        var myTimeout = setTimeout(function () {document.getElementById('prompt2').innerHTML = ""}, 10000);
     } 
         
     array3.push([array1.length - 1])
