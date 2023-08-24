@@ -5,6 +5,7 @@
 </head>
 <body id="boody"></body>
 <h1>Memory Match</h1>
+<h2 id="Possibilities">Possibilities: 16</h2>
 <div id="rateContainer">
     <div id="rateChangerL"><p>Slower</p></div>
     <div id="rateChangerR"><p>Faster</p></div>
@@ -97,7 +98,8 @@ rateR.addEventListener("click", function () {
     }
 })
 
-
+var Round = 1;
+var possibilities = ["16", "256", "4,096", "65,536", "1,048,576", "16,777,216", "268,435,456", "4,294,967,296", "68,719,476,736", "1,099,511,627,776", "17,592,186,044,416", "281,474,976,710,656", "4,503,599,627,370,496", "72,057,594,037,927,936", "1,152,921,504,606,846,976", "18,446,744,073,709,551,616", "295,147,905,179,352,825,856", "4,722,366,482,869,645,213,696", "75,557,863,725,914,323,419,136", "1,208,925,819,614,629,174,706,176", "19,342,813,113,834,066,795,298,816"  ]
 var array1 = [1]
 var array2 = []
 var array3 = [ 2, 5 ]
@@ -106,6 +108,7 @@ var aa= 0;
 fries = 0;
 infoCheck = 0;
 function lose() {
+    document.getElementById('Possibilities').innerHTML = `Possibilities: 16`;
     array3.sort(compareFunction);
     function compareFunction(a, b) {
         return b - a;
@@ -249,71 +252,115 @@ function nextRound() {
         document.getElementById("block14").style.border = "3px solid rgb(29, 184, 29)";
         document.getElementById("block15").style.border = "3px solid rgb(29, 184, 29)";
         document.getElementById("block16").style.border = "3px solid rgb(29, 184, 29)";
-        document.getElementById('score').innerHTML = `Score: `  + `${array1.length -1}`
+        document.getElementById('score').innerHTML = `Score: `  + `${array1.length -1}`;
 
-        if (array1.length > 2) {
-        document.getElementById("prompt").innerHTML = "That all you got?"
-    }
-    if (array1.length > 3) {
-        document.getElementById("prompt").innerHTML = "Keep clicking"
-    }
-    if (array1.length > 4) {
-        document.getElementById("prompt").innerHTML = "4..."
-    }
-    if (array1.length > 5) {
-        document.getElementById("prompt").innerHTML = "Are you tired?"
-    }
-    if (array1.length > 6) {
-        document.getElementById("prompt").innerHTML = "You're getting there."
-    }
-    if (array1.length > 7) {
-        document.getElementById("prompt").innerHTML = "Not bad."
-    }
-    if (array1.length > 8) {
-        document.getElementById("prompt").innerHTML = "Ok"
-    }
-    if (array1.length > 9) {
-        document.getElementById("prompt").innerHTML = "Great"
-    }
-    if (array1.length > 10) {
-        document.getElementById("prompt").innerHTML = "Dang"
-    }
-    if (array1.length > 11) {
-        document.getElementById("prompt").innerHTML = "Awesome!"
-    }
-    if (array1.length > 12) {
-        document.getElementById("prompt").innerHTML = "Still going? WTF?"
-    }
-    if (array1.length > 13) {
-        document.getElementById("prompt").innerHTML = "Superb!"
-    }
-    if (array1.length > 14) {
-        document.getElementById("prompt").innerHTML = "Outstanding!"
-    }
-    if (array1.length > 15) {
-        document.getElementById("prompt").innerHTML = "Not Human!"
-    }
-    if (array1.length > 16) {
-        document.getElementById("prompt").innerHTML = "Impossible!"
-    }
-    if (array1.length > 17) {
-        document.getElementById("prompt").innerHTML = "IQ 5000"
-    }
-    if (array1.length > 18) {
-        document.getElementById("prompt").style.fontFamily = "Wingdings"
-        document.getElementById("prompt").innerHTML = "Totally Muts!"
-    }
-    if (array1.length > 19) {
-        document.getElementById("prompt").innerHTML = "Genious!"
-    }
-    if (array1.length > 20) {
-        document.getElementById("prompt").innerHTML = "You've beat the entire game!"
-    }
     }
 }
 var rate = 1;
 var starter = 1
 function funcy(varr) {
+    if (array1.length == 2  ) {
+        document.getElementById("prompt").innerHTML = "That all you got?"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 256`;
+    }
+    if (array1.length > 2) {
+        document.getElementById("prompt").innerHTML = "That all you got?"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 4,096`;
+
+    }
+    if (array1.length > 3) {
+        document.getElementById("prompt").innerHTML = "Keep clicking"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 65,536`;
+
+    }
+    if (array1.length > 4) {
+        document.getElementById("prompt").innerHTML = "4..."
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 1,048,576`;
+
+    }
+    if (array1.length > 5) {
+        document.getElementById("prompt").innerHTML = "Are you tired?"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 16,777,216`;
+
+    }
+    if (array1.length > 6) {
+        document.getElementById("prompt").innerHTML = "You're getting there."
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 268,435,456`;
+
+    }
+    if (array1.length > 7) {
+        document.getElementById("prompt").innerHTML = "Not bad."
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 4,294,967,296`;
+
+    }
+    if (array1.length > 8) {
+        document.getElementById("prompt").innerHTML = "Ok"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 68,719,476,736`;
+
+    }
+    if (array1.length > 9) {
+        document.getElementById("prompt").innerHTML = "Great"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 1,099,511,627,776`;
+
+    }
+    if (array1.length > 10) {
+        document.getElementById("prompt").innerHTML = "Dang"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 17,592,186,044,416`;
+
+    }
+    if (array1.length > 11) {
+        document.getElementById("prompt").innerHTML = "Awesome!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 281,474,976,710,656`;
+
+    }
+    if (array1.length > 12) {
+        document.getElementById("prompt").innerHTML = "Still going? WTF?"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 4,503,599,627,370,496`;
+
+    }
+    if (array1.length > 13) {
+        document.getElementById("prompt").innerHTML = "Superb!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 72,057,594,037,927,936`;
+
+    }
+    if (array1.length > 14) {
+        document.getElementById("prompt").innerHTML = "Outstanding!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 1,152,921,504,606,846,976`;
+
+    }
+    if (array1.length > 15) {
+        document.getElementById("prompt").innerHTML = "Not Human!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 18,446,744,073,709,551,616`;
+
+    }
+    if (array1.length > 16) {
+        document.getElementById("prompt").innerHTML = "Impossible!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 295,147,905,179,352,825,856`;
+
+    }
+    if (array1.length > 17) {
+        document.getElementById("prompt").innerHTML = "IQ 5000"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 4,722,366,482,869,645,213,696`;
+
+    }
+    if (array1.length > 18) {
+        document.getElementById("prompt").style.fontFamily = "Wingdings"
+        document.getElementById("prompt").innerHTML = "Totally Muts!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 75,557,863,725,914,323,419,136`;
+
+    }
+    if (array1.length > 19) {
+        document.getElementById("prompt").innerHTML = "Genious!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 1,208,925,819,614,629,174,706,176`;
+
+    }
+    if (array1.length > 20) {
+        document.getElementById("prompt").innerHTML = "You've beat the entire game!"
+        document.getElementById('Possibilities').innerHTML = `Possibilities: 19,342,813,113,834,066,795,298,816`;
+
+    }
+   
+    
     document.getElementById("prompt").style.fontFamily = "Lucida Console"
     document.getElementById("prompt").innerHTML = ""
     
