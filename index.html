@@ -100,7 +100,7 @@ rateR.addEventListener("click", function () {
 
 var array1 = [1]
 var array2 = []
-var array3 = [7, 2, 5 ]
+var array3 = [ 2, 5 ]
 var easy;
 var aa= 0;
 fries = 0;
@@ -115,6 +115,7 @@ function lose() {
     } else {
         var myTimeout = setTimeout(function () {document.getElementById("prompt").innerHTML = "Game Over"}, 10);
         var myTimeout = setTimeout(function () {document.getElementById("prompt").innerHTML = ""}, 5000);
+        
     }
     array3.push([array1.length - 1])
     array3.sort(compareFunction);
@@ -132,37 +133,21 @@ function lose() {
     array2 = [];
     click = 0;
     document.getElementById("block1").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block1").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block2").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block2").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block3").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block3").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block4").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block4").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block5").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block5").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block6").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block6").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block7").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block7").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block8").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block8").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block9").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block9").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block10").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block10").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block11").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block11").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block12").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block12").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block13").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block13").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block14").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block14").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block15").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block15").style.pointerEvents = "auto";}, 2000);
     document.getElementById("block16").style.pointerEvents = "none";
-    var myTimeout = setTimeout(function () {document.getElementById("block16").style.pointerEvents = "auto";}, 2000);
 }
 
 document.getElementById("showNumbers").addEventListener("click", function () {
