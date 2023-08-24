@@ -110,13 +110,13 @@ function lose() {
     function compareFunction(a, b) {
         return b - a;
     }
+    document.getElementById("prompt").innerHTML = "Game Over"
+    
+    
     if ((array1.length - 1) > array1[0]) {
         document.getElementById("prompt").innerHTML = "New Highest Score!"
-    } else {
-        var myTimeout = setTimeout(function () {document.getElementById("prompt").innerHTML = "Game Over"}, 10);
-        var myTimeout = setTimeout(function () {document.getElementById("prompt").innerHTML = ""}, 5000);
+    } 
         
-    }
     array3.push([array1.length - 1])
     array3.sort(compareFunction);
     function compareFunction(a, b) {
@@ -254,6 +254,7 @@ function nextRound() {
 var rate = 1;
 var starter = 1
 function funcy(varr) {
+    document.getElementById("prompt").innerHTML = ""
     document.getElementById("block1").style.pointerEvents = "auto";
     document.getElementById("block2").style.pointerEvents = "auto";
     document.getElementById("block3").style.pointerEvents = "auto";
