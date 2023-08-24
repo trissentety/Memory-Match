@@ -137,6 +137,11 @@ h3 {
     color: orange;
 }
 
+#Possibilities {
+    color: rgb(59, 59, 59);
+    font-size: 18px;
+}
+
 #rateContainer {
     display: flex;
     justify-content: space-evenly;
