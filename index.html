@@ -232,11 +232,74 @@ function nextRound() {
     if (array1.toString() === array2.toString()) {
         var power = Math.ceil(Math.random() * 16);
         array1.push([power]);
+        document.getElementById("block1").style.pointerEvents = "none";
+        document.getElementById("block2").style.pointerEvents = "none";
+        document.getElementById("block3").style.pointerEvents = "none";
+        document.getElementById("block4").style.pointerEvents = "none";
+        document.getElementById("block5").style.pointerEvents = "none";
+        document.getElementById("block6").style.pointerEvents = "none";
+        document.getElementById("block7").style.pointerEvents = "none";
+        document.getElementById("block8").style.pointerEvents = "none";
+        document.getElementById("block9").style.pointerEvents = "none";
+        document.getElementById("block10").style.pointerEvents = "none";
+        document.getElementById("block11").style.pointerEvents = "none";
+        document.getElementById("block12").style.pointerEvents = "none";
+        document.getElementById("block13").style.pointerEvents = "none";
+        document.getElementById("block14").style.pointerEvents = "none";
+        document.getElementById("block15").style.pointerEvents = "none";
+        document.getElementById("block16").style.pointerEvents = "none";
+        document.getElementById("block1").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block2").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block3").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block4").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block5").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block6").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block7").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block8").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block9").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block10").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block11").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block12").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block13").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block14").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block15").style.border = "3px solid rgb(29, 184, 29)";
+        document.getElementById("block16").style.border = "3px solid rgb(29, 184, 29)";
     }
 }
 var rate = 1;
 var starter = 1
 function funcy(varr) {
+    document.getElementById("block2").style.pointerEvents = "auto";
+    document.getElementById("block3").style.pointerEvents = "auto";
+    document.getElementById("block4").style.pointerEvents = "auto";
+    document.getElementById("block5").style.pointerEvents = "auto";
+    document.getElementById("block6").style.pointerEvents = "auto";
+    document.getElementById("block7").style.pointerEvents = "auto";
+    document.getElementById("block8").style.pointerEvents = "auto";
+    document.getElementById("block9").style.pointerEvents = "auto";
+    document.getElementById("block10").style.pointerEvents = "auto";
+    document.getElementById("block11").style.pointerEvents = "auto";
+    document.getElementById("block12").style.pointerEvents = "auto";
+    document.getElementById("block13").style.pointerEvents = "auto";
+    document.getElementById("block14").style.pointerEvents = "auto";
+    document.getElementById("block15").style.pointerEvents = "auto";
+    document.getElementById("block16").style.pointerEvents = "auto";
+    document.getElementById("block1").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block2").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block3").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block4").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block5").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block6").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block7").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block8").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block9").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block10").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block11").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block12").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block13").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block14").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block15").style.border = "3px solid rgb(157, 95, 219)";
+    document.getElementById("block16").style.border = "3px solid rgb(157, 95, 219)";
     document.getElementById('score').innerHTML = `Score: `  + `${array1.length -1}`
     if (array1[0] === 1) {
         array1 = []
