@@ -121,13 +121,13 @@ function lose() {
     function compareFunction(a, b) {
         return b - a;
     }
-    if (array3 === -1) {
-        array3.splice(0,1);
-    }
-    document.getElementById("highscore").innerHTML = "High Scores: \n";
-    array3.forEach(function(val, i, arr) {
+    if (array3.length > 0 && array3[0] !== -1) {
+        document.getElementById("highscore").innerHTML = "High Scores: \n";
+        array3.forEach(function(val, i, arr) {
         document.getElementById("highscore").innerHTML += (i + 1) + "): " + val + "\n"
     })
+}
+
     array1 = [];
     array2 = [];
     click = 0;
@@ -179,7 +179,6 @@ document.addEventListener("keydown", function(event) {
     document.getElementById("showNumbers").style.color = "grey"
     array2 = []
     click = 0;
-    funcy();
   }
 });
 document.addEventListener("keyup", function(event) {
@@ -198,7 +197,6 @@ document.addEventListener("keydown", function(event) {
     document.getElementById("showNumbers").style.color = "grey"
     array2 = []
     click = 0;
-    funcy();
   }
 });
 document.addEventListener("keyup", function(event) {
@@ -328,7 +326,7 @@ function funcy(varr) {
     })
         }
         if (rate == 1) {
-            var interval = 403;
+            var interval = 410;
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
@@ -490,7 +488,7 @@ function funcy(varr) {
         }
 
         if (rate == 3) {
-            var interval = 203;
+            var interval = 210;
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
@@ -571,7 +569,7 @@ function funcy(varr) {
         }
 
         if (rate == 4) {
-            var interval = 123;
+            var interval = 123; 
          var promise = Promise.resolve(); 
          
          array1.forEach(function (el) {
