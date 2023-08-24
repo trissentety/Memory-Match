@@ -34,6 +34,13 @@ textarea::-webkit-scrollbar-thumb {
     text-align: center;
     color: silver;
 }
+#prompt2 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: rgb(15, 39, 255);
+}
 
 #buttoncon {
     display: flex;
