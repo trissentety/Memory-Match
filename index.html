@@ -120,7 +120,6 @@ function lose() {
 
     if ((array1.length - 1) > array3[0]) {
         document.getElementById("prompt2").innerHTML = "New Highest Score!"
-        var myTimeout = setTimeout(function () {document.getElementById('prompt2').innerHTML = ""}, 10000);
     } 
         
     array3.push([array1.length - 1])
@@ -262,6 +261,7 @@ function nextRound() {
 var rate = 1;
 var starter = 1
 function funcy(varr) {
+    document.getElementById('prompt2').innerHTML = ""
     document.getElementById("prompt").innerHTML = "";
     if (array1.length == 2  ) {
         document.getElementById('Possibilities').innerHTML = `Possibilities: 256`;
