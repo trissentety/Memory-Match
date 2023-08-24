@@ -113,7 +113,7 @@ function lose() {
     document.getElementById("prompt").innerHTML = "Game Over"
     
     
-    if ((array1.length - 1) > array1[0]) {
+    if (array1.length > array1[0]) {
         document.getElementById("prompt").innerHTML = "New Highest Score!"
     } 
         
@@ -249,12 +249,73 @@ function nextRound() {
         document.getElementById("block14").style.border = "3px solid rgb(29, 184, 29)";
         document.getElementById("block15").style.border = "3px solid rgb(29, 184, 29)";
         document.getElementById("block16").style.border = "3px solid rgb(29, 184, 29)";
+
+        if (array1.length > 2) {
+        document.getElementById("prompt").innerHTML = "That all you got?"
+    }
+    if (array1.length > 3) {
+        document.getElementById("prompt").innerHTML = "Keep clicking"
+    }
+    if (array1.length > 4) {
+        document.getElementById("prompt").innerHTML = "4..."
+    }
+    if (array1.length > 5) {
+        document.getElementById("prompt").innerHTML = "Are you tired?"
+    }
+    if (array1.length > 6) {
+        document.getElementById("prompt").innerHTML = "Oh yeah?"
+    }
+    if (array1.length > 7) {
+        document.getElementById("prompt").innerHTML = "Not bad."
+    }
+    if (array1.length > 8) {
+        document.getElementById("prompt").innerHTML = "Ok"
+    }
+    if (array1.length > 9) {
+        document.getElementById("prompt").innerHTML = "Great"
+    }
+    if (array1.length > 10) {
+        document.getElementById("prompt").innerHTML = "Dang"
+    }
+    if (array1.length > 11) {
+        document.getElementById("prompt").innerHTML = "Awesome!"
+    }
+    if (array1.length > 12) {
+        document.getElementById("prompt").innerHTML = "Still going? WTF?"
+    }
+    if (array1.length > 13) {
+        document.getElementById("prompt").innerHTML = "Superb!"
+    }
+    if (array1.length > 14) {
+        document.getElementById("prompt").innerHTML = "Outstanding!"
+    }
+    if (array1.length > 15) {
+        document.getElementById("prompt").innerHTML = "Not Human!"
+    }
+    if (array1.length > 16) {
+        document.getElementById("prompt").innerHTML = "Impossible!"
+    }
+    if (array1.length > 17) {
+        document.getElementById("prompt").innerHTML = "IQ 5000"
+    }
+    if (array1.length > 18) {
+        document.getElementById("prompt").style.fontFamily = "Wingdings"
+        document.getElementById("prompt").innerHTML = "Totally Muts!"
+    }
+    if (array1.length > 19) {
+        document.getElementById("prompt").innerHTML = "Genious!"
+    }
+    if (array1.length > 20) {
+        document.getElementById("prompt").innerHTML = "You've beat the entire game!"
+    }
     }
 }
 var rate = 1;
 var starter = 1
 function funcy(varr) {
+    document.getElementById("prompt").style.fontFamily = "Lucida Console"
     document.getElementById("prompt").innerHTML = ""
+    
     document.getElementById("block1").style.pointerEvents = "auto";
     document.getElementById("block2").style.pointerEvents = "auto";
     document.getElementById("block3").style.pointerEvents = "auto";
