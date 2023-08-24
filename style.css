@@ -41,6 +41,14 @@ textarea::-webkit-scrollbar-thumb {
     text-align: center;
     color: rgb(15, 39, 255);
 }
+#prompt3 {
+    font-family: Segoe Script;
+    font-size: 35px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: #ffbf00;
+}
 
 #buttoncon {
     display: flex;
