@@ -14,29 +14,31 @@
 <h2 id="score"><p></p></h2>
 <textarea id="highscore">High Scores:         </textarea>
 <div id="showNumbers"><p>Start</p></div>
-<div id="blockholder">
-    <div id="block1"></div>
-    <div id="block2"></div>
-    <div id="block3"></div>
-    <div id="block4"></div>
-</div>
-<div id="blockholder2">
-    <div id="block5"></div>
-    <div id="block6"></div>
-    <div id="block7"></div>
-    <div id="block8"></div>
-</div>
-<div id="blockholder3">
-    <div id="block9"></div>
-    <div id="block10"></div>
-    <div id="block11"></div>
-    <div id="block12"></div>
-</div>
-<div id="blockholder4">
-    <div id="block13"></div>
-    <div id="block14"></div>
-    <div id="block15"></div>
-    <div id="block16"></div>
+<div id="masterHolder">
+    <div id="blockholder">
+        <div id="block1"></div>
+        <div id="block2"></div>
+        <div id="block3"></div>
+        <div id="block4"></div>
+    </div>
+    <div id="blockholder2">
+        <div id="block5"></div>
+        <div id="block6"></div>
+        <div id="block7"></div>
+        <div id="block8"></div>
+    </div>
+    <div id="blockholder3">
+        <div id="block9"></div>
+        <div id="block10"></div>
+        <div id="block11"></div>
+        <div id="block12"></div>
+    </div>
+    <div id="blockholder4">
+        <div id="block13"></div>
+        <div id="block14"></div>
+        <div id="block15"></div>
+        <div id="block16"></div>
+    </div>
 </div>
 <div id="prompt"><h3></h3></div>
 <div id="prompt2"><h3></h3></div>
@@ -259,6 +261,45 @@ function nextRound() {
 
     }
 }
+
+
+
+function freezer () {
+        document.getElementById("block1").style.pointerEvents = "none";
+        document.getElementById("block2").style.pointerEvents = "none";
+        document.getElementById("block3").style.pointerEvents = "none";
+        document.getElementById("block4").style.pointerEvents = "none";
+        document.getElementById("block5").style.pointerEvents = "none";
+        document.getElementById("block6").style.pointerEvents = "none";
+        document.getElementById("block7").style.pointerEvents = "none";
+        document.getElementById("block8").style.pointerEvents = "none";
+        document.getElementById("block9").style.pointerEvents = "none";
+        document.getElementById("block10").style.pointerEvents = "none";
+        document.getElementById("block11").style.pointerEvents = "none";
+        document.getElementById("block12").style.pointerEvents = "none";
+        document.getElementById("block13").style.pointerEvents = "none";
+        document.getElementById("block14").style.pointerEvents = "none";
+        document.getElementById("block15").style.pointerEvents = "none";
+        document.getElementById("block16").style.pointerEvents = "none";
+}
+function melter () {
+        document.getElementById("block1").style.pointerEvents = "auto";
+        document.getElementById("block2").style.pointerEvents = "auto";
+        document.getElementById("block3").style.pointerEvents = "auto";
+        document.getElementById("block4").style.pointerEvents = "auto";
+        document.getElementById("block5").style.pointerEvents = "auto";
+        document.getElementById("block6").style.pointerEvents = "auto";
+        document.getElementById("block7").style.pointerEvents = "auto";
+        document.getElementById("block8").style.pointerEvents = "auto";
+        document.getElementById("block9").style.pointerEvents = "auto";
+        document.getElementById("block10").style.pointerEvents = "auto";
+        document.getElementById("block11").style.pointerEvents = "auto";
+        document.getElementById("block12").style.pointerEvents = "auto";
+        document.getElementById("block13").style.pointerEvents = "auto";
+        document.getElementById("block14").style.pointerEvents = "auto";
+        document.getElementById("block15").style.pointerEvents = "auto";
+        document.getElementById("block16").style.pointerEvents = "auto";
+}
 var rate = 1;
 var starter = 1
 function funcy(varr) {
@@ -430,8 +471,11 @@ function funcy(varr) {
          
          array1.forEach(function (el) {
              promise = promise.then(function () {
+                
                  console.log(el);
+                 freezer()
             if( el == 1) {
+                
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
@@ -496,6 +540,69 @@ function funcy(varr) {
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
+            if (array1.length == 1) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 2) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 3) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 4) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 5) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 6) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 7) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 8) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 9) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 10) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 11) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 12) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 13) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 14) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 15) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 16) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 17) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 18) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 19) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length == 20) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
+            if (array1.length > 20) {
+                var myTimeout = setTimeout(function () {melter()}, 1253);
+            }
             
             return new Promise(function (resolve) {
             setTimeout(resolve, interval);
@@ -511,6 +618,7 @@ function funcy(varr) {
          array1.forEach(function (el) {
              promise = promise.then(function () {
                  console.log(el);
+                 freezer();
             if( el == 1) {
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 400);
@@ -576,7 +684,69 @@ function funcy(varr) {
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
-            
+            if (array1.length == 1) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 2) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 3) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 4) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 5) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 6) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 7) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 8) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 9) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 10) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 11) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 12) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 13) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 14) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 15) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 16) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 17) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 18) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 19) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length == 20) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
+            if (array1.length > 20) {
+                var myTimeout = setTimeout(function () {melter()}, 410);
+            }
             return new Promise(function (resolve) {
             setTimeout(resolve, interval);
             });
@@ -592,6 +762,7 @@ function funcy(varr) {
          array1.forEach(function (el) {
              promise = promise.then(function () {
                  console.log(el);
+                 freezer();
             if( el == 1) {
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 250);
@@ -657,6 +828,69 @@ function funcy(varr) {
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
+            if (array1.length == 1) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 2) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 3) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 4) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 5) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 6) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 7) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 8) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 9) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 10) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 11) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 12) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 13) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 14) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 15) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 16) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 17) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 18) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 19) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length == 20) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
+            if (array1.length > 20) {
+                var myTimeout = setTimeout(function () {melter()}, 260);
+            }
             
             return new Promise(function (resolve) {
             setTimeout(resolve, interval);
@@ -673,6 +907,7 @@ function funcy(varr) {
          array1.forEach(function (el) {
              promise = promise.then(function () {
                  console.log(el);
+                 freezer();
             if( el == 1) {
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 200);
@@ -738,7 +973,69 @@ function funcy(varr) {
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
-            
+            if (array1.length == 1) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 2) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 3) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 4) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 5) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 6) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 7) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 8) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 9) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 10) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 11) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 12) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 13) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 14) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 15) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 16) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 17) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 18) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 19) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length == 20) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
+            if (array1.length > 20) {
+                var myTimeout = setTimeout(function () {melter()}, 210);
+            }
             return new Promise(function (resolve) {
             setTimeout(resolve, interval);
             });
@@ -754,6 +1051,7 @@ function funcy(varr) {
          array1.forEach(function (el) {
              promise = promise.then(function () {
                  console.log(el);
+                 freezer();
             if( el == 1) {
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 120);
@@ -819,6 +1117,69 @@ function funcy(varr) {
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
+            if (array1.length == 1) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 2) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 3) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 4) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 5) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 6) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 7) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 8) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 9) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 10) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 11) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 12) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 13) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 14) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 15) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 16) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 17) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 18) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 19) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length == 20) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
+            if (array1.length > 20) {
+                var myTimeout = setTimeout(function () {melter()}, 130);
+            }
             
             return new Promise(function (resolve) {
             setTimeout(resolve, interval);
@@ -826,6 +1187,22 @@ function funcy(varr) {
             console.log(array1);
         });
     })
+    document.getElementById("block1").style.pointerEvents = "auto";
+        document.getElementById("block2").style.pointerEvents = "auto";
+        document.getElementById("block3").style.pointerEvents = "auto";
+        document.getElementById("block4").style.pointerEvents = "auto";
+        document.getElementById("block5").style.pointerEvents = "auto";
+        document.getElementById("block6").style.pointerEvents = "auto";
+        document.getElementById("block7").style.pointerEvents = "auto";
+        document.getElementById("block8").style.pointerEvents = "auto";
+        document.getElementById("block9").style.pointerEvents = "auto";
+        document.getElementById("block10").style.pointerEvents = "auto";
+        document.getElementById("block11").style.pointerEvents = "auto";
+        document.getElementById("block12").style.pointerEvents = "auto";
+        document.getElementById("block13").style.pointerEvents = "auto";
+        document.getElementById("block14").style.pointerEvents = "auto";
+        document.getElementById("block15").style.pointerEvents = "auto";
+        document.getElementById("block16").style.pointerEvents = "auto";
         }
 
         var a1p = 0
