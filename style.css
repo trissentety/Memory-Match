@@ -169,7 +169,10 @@ function lose() {
     if (array3.length > 0 && array3[0] !== -1) {
         document.getElementById("highscore").innerHTML = "High Scores: \n";
         array3.forEach(function(val, i, arr) {
-        document.getElementById("highscore").innerHTML += (i + 1) + "): " + val + "\n"
+            if (val > 0) {
+                document.getElementById("highscore").innerHTML += (i + 1) + "): " + val + "\n"  
+        }
+
     })
 }
 
