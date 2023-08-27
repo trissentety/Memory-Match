@@ -4,6 +4,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body id="boody"></body>
+<div id="achievementsholder">
+    <div id="achievements"><p>Achievements:</p></div>
+    <div id="achievements2">Light two same squares in a row</div>
+    <div id="achievements3">Light three same squares in a row</div>
+    <div id="achievements4">Make it to round 10</div>
+    <div id="achievements5">Play 25 rounds</div>
+    <div id="achievements6">Beat the whole game</div>
+    <div id="achievements7">Light three Same squares in one game</div>
+</div>
+
 <h1>Memory Match</h1>
 <h2 id="Possibilities">16 Possibilities</h2>
 <div id="rateContainer">
@@ -11,7 +21,6 @@
     <div id="rateChangerR"><p>Faster</p></div>
 </div>
 <div class="triangle"></div>
-
 <h2 id="score"><p></p></h2>
 <textarea id="highscore">High Scores:         </textarea>
 <div id="showNumbers"><p>Start</p></div>
@@ -129,8 +138,29 @@ var count13 = 0
 var count14 = 0
 var count15 = 0
 var count16 = 0
+var play = 0;
+var same1 = 0;
+var same2 = 0;
+var same3 = 0;
+var same4 = 0;
+var same5 = 0;
+var same6 = 0;
+var same7 = 0;
+var same8 = 0;
+var same9 = 0;
+var same10 = 0;
+var same11 = 0;
+var same12 = 0;
+var same13 = 0;
+var same14 = 0;
+var same15 = 0;
+var same16 = 0;
 
 function lose() {
+    play++;
+    if (play < 25) {
+        document.getElementById("achievements5").innerHTML = "Play 25 rounds(" + play + "/25)";
+    }
     count1 = 0
     count2 = 0
     count3 = 0
@@ -169,9 +199,16 @@ function lose() {
     if (array3.length > 0 && array3[0] !== -1) {
         document.getElementById("highscore").innerHTML = "High Scores: \n";
         array3.forEach(function(val, i, arr) {
-        document.getElementById("highscore").innerHTML += (i + 1) + "): " + val + "\n"
+            if (val > 0) {
+                document.getElementById("highscore").innerHTML += (i + 1) + "): " + val + "\n"  
+        }
+
     })
 }
+
+
+
+
 
     array1 = [];
     array2 = [];
@@ -193,6 +230,8 @@ function lose() {
     document.getElementById("block15").style.pointerEvents = "none";
     document.getElementById("block16").style.pointerEvents = "none";
 }
+
+
 
 document.getElementById("showNumbers").addEventListener("click", function () {
     document.getElementById("info").style.display = "none";
@@ -257,8 +296,29 @@ showNumbers.addEventListener("click", function(event) {
     funcy();
 });
 
+
+
 function nextRound() {
     if (array1.toString() === array2.toString()) {
+        if (same1 == 3 || 
+    same2 == 3 || 
+    same3 == 3 || 
+    same4 == 3 || 
+    same5 == 3 || 
+    same6 == 3 || 
+    same7 == 3 || 
+    same8 == 3 || 
+    same9 == 3 || 
+    same10 == 3 || 
+    same11 == 3 || 
+    same12 == 3 || 
+    same13 == 3 || 
+    same14 == 3 || 
+    same15 == 3 || 
+    same16 == 3 ) {
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+        document.getElementById("achievements7").innerHTML = "<s>Light three same squares in one game</s> (Complete)"
+    }
         var power = Math.ceil(Math.random() * 16);
         array1.push([power]);
         document.getElementById("block1").style.pointerEvents = "none";
@@ -277,6 +337,22 @@ function nextRound() {
         document.getElementById("block14").style.pointerEvents = "none";
         document.getElementById("block15").style.pointerEvents = "none";
         document.getElementById("block16").style.pointerEvents = "none";
+        same1 = 0;
+        same2 = 0;
+        same3 = 0;
+        same4 = 0;
+        same5 = 0;
+        same6 = 0;
+        same7 = 0;
+        same8 = 0;
+        same9 = 0;
+        same10 = 0;
+        same11 = 0;
+        same12 = 0;
+        same13 = 0;
+        same14 = 0;
+        same15 = 0;
+        same16 = 0;
         document.getElementById("block1").style.border = "3px solid rgb(29, 184, 29)";
         document.getElementById("block2").style.border = "3px solid rgb(29, 184, 29)";
         document.getElementById("block3").style.border = "3px solid rgb(29, 184, 29)";
@@ -339,6 +415,702 @@ function melter () {
 var rate = 1;
 var starter = 1
 function funcy(varr) {
+
+    if (play >= 25) {
+        document.getElementById("achievements5").innerHTML = "<s>Play 25 rounds</s> (Complete)"
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+
+    if (array1[0] == 1 && array1[1] == 1 || 
+    array1[0] == 2 && array1[1] == 2 || 
+    array1[0] == 3 && array1[1] == 3 || 
+    array1[0] == 4 && array1[1] == 4 || 
+    array1[0] == 5 && array1[1] == 5 || 
+    array1[0] == 6 && array1[1] == 6 || 
+    array1[0] == 7 && array1[1] == 7 || 
+    array1[0] == 8 && array1[1] == 8 || 
+    array1[0] == 9 && array1[1] == 9 || 
+    array1[0] == 10 && array1[1] == 10 || 
+    array1[0] == 11 && array1[1] == 11 || 
+    array1[0] == 12 && array1[1] == 12 || 
+    array1[0] == 13 && array1[1] == 13 || 
+    array1[0] == 14 && array1[1] == 14 || 
+    array1[0] == 15 && array1[1] == 15 ||
+     array1[0] == 16 && array1[1] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row<s/> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+    }
+    if (array1[1] == 1 && array1[2] == 1 || 
+    array1[1] == 2 && array1[2] == 2 || 
+    array1[1] == 3 && array1[2] == 3 || 
+    array1[1] == 4 && array1[2] == 4 || 
+    array1[1] == 5 && array1[2] == 5 || 
+    array1[1] == 6 && array1[2] == 6 || 
+    array1[1] == 7 && array1[2] == 7 || 
+    array1[1] == 8 && array1[2] == 8 || 
+    array1[1] == 9 && array1[2] == 9 || 
+    array1[1] == 10 && array1[2] == 10 || 
+    array1[1] == 11 && array1[2] == 11 || 
+    array1[1] == 12 && array1[2] == 12 || 
+    array1[1] == 13 && array1[2] == 13 || 
+    array1[1] == 14 && array1[2] == 14 || 
+    array1[1] == 15 && array1[2] == 15 ||
+    array1[1] == 16 && array1[2] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row<s/> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+    }
+    if (array1[2] == 1 && array1[3] == 1 || 
+    array1[2] == 2 && array1[3] == 2 || 
+    array1[2] == 3 && array1[3] == 3 || 
+    array1[2] == 4 && array1[3] == 4 || 
+    array1[2] == 5 && array1[3] == 5 || 
+    array1[2] == 6 && array1[3] == 6 || 
+    array1[2] == 7 && array1[3] == 7 || 
+    array1[2] == 8 && array1[3] == 8 || 
+    array1[2] == 9 && array1[3] == 9 || 
+    array1[2] == 10 && array1[3] == 10 || 
+    array1[2] == 11 && array1[3] == 11 || 
+    array1[2] == 12 && array1[3] == 12 || 
+    array1[2] == 13 && array1[3] == 13 || 
+    array1[2] == 14 && array1[3] == 14 || 
+    array1[2] == 15 && array1[3] == 15 ||
+     array1[2] == 16 && array1[3] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+    }
+    if (array1[3] == 1 && array1[4] == 1 || 
+    array1[3] == 2 && array1[4] == 2 || 
+    array1[3] == 3 && array1[4] == 3 || 
+    array1[3] == 4 && array1[4] == 4 || 
+    array1[3] == 5 && array1[4] == 5 || 
+    array1[3] == 6 && array1[4] == 6 || 
+    array1[3] == 7 && array1[4] == 7 || 
+    array1[3] == 8 && array1[4] == 8 || 
+    array1[3] == 9 && array1[4] == 9 || 
+    array1[3] == 10 && array1[4] == 10 || 
+    array1[3] == 11 && array1[4] == 11 || 
+    array1[3] == 12 && array1[4] == 12 || 
+    array1[3] == 13 && array1[4] == 13 || 
+    array1[3] == 14 && array1[4] == 14 || 
+    array1[3] == 15 && array1[4] == 15 ||
+    array1[3] == 16 && array1[4] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[4] == 1 && array1[5] == 1 || 
+    array1[4] == 2 && array1[5] == 2 || 
+    array1[4] == 3 && array1[5] == 3 || 
+    array1[4] == 4 && array1[5] == 4 || 
+    array1[4] == 5 && array1[5] == 5 || 
+    array1[4] == 6 && array1[5] == 6 || 
+    array1[4] == 7 && array1[5] == 7 || 
+    array1[4] == 8 && array1[5] == 8 || 
+    array1[4] == 9 && array1[5] == 9 || 
+    array1[4] == 10 && array1[5] == 10 || 
+    array1[4] == 11 && array1[5] == 11 || 
+    array1[4] == 12 && array1[5] == 12 || 
+    array1[4] == 13 && array1[5] == 13 || 
+    array1[4] == 14 && array1[5] == 14 || 
+    array1[4] == 15 && array1[5] == 15 ||
+    array1[4] == 16 && array1[5] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[5] == 1 && array1[6] == 1 || 
+    array1[5] == 2 && array1[6] == 2 || 
+    array1[5] == 3 && array1[6] == 3 || 
+    array1[5] == 4 && array1[6] == 4 || 
+    array1[5] == 5 && array1[6] == 5 || 
+    array1[5] == 6 && array1[6] == 6 || 
+    array1[5] == 7 && array1[6] == 7 || 
+    array1[5] == 8 && array1[6] == 8 || 
+    array1[5] == 9 && array1[6] == 9 || 
+    array1[5] == 10 && array1[6] == 10 || 
+    array1[5] == 11 && array1[6] == 11 || 
+    array1[5] == 12 && array1[6] == 12 || 
+    array1[5] == 13 && array1[6] == 13 || 
+    array1[5] == 14 && array1[6] == 14 || 
+    array1[5] == 15 && array1[6] == 15 ||
+    array1[5] == 16 && array1[6] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[6] == 1 && array1[7] == 1 || 
+    array1[6] == 2 && array1[7] == 2 || 
+    array1[6] == 3 && array1[7] == 3 || 
+    array1[6] == 4 && array1[7] == 4 || 
+    array1[6] == 5 && array1[7] == 5 || 
+    array1[6] == 6 && array1[7] == 6 || 
+    array1[6] == 7 && array1[7] == 7 || 
+    array1[6] == 8 && array1[7] == 8 || 
+    array1[6] == 9 && array1[7] == 9 || 
+    array1[6] == 10 && array1[7] == 10 || 
+    array1[6] == 11 && array1[7] == 11 || 
+    array1[6] == 12 && array1[7] == 12 || 
+    array1[6] == 13 && array1[7] == 13 || 
+    array1[6] == 14 && array1[7] == 14 || 
+    array1[6] == 15 && array1[7] == 15 ||
+    array1[6] == 16 && array1[7] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[7] == 1 && array1[8] == 1 || 
+    array1[7] == 2 && array1[8] == 2 || 
+    array1[7] == 3 && array1[8] == 3 || 
+    array1[7] == 4 && array1[8] == 4 || 
+    array1[7] == 5 && array1[8] == 5 || 
+    array1[7] == 6 && array1[8] == 6 || 
+    array1[7] == 7 && array1[8] == 7 || 
+    array1[7] == 8 && array1[8] == 8 || 
+    array1[7] == 9 && array1[8] == 9 || 
+    array1[7] == 10 && array1[8] == 10 || 
+    array1[7] == 11 && array1[8] == 11 || 
+    array1[7] == 12 && array1[8] == 12 || 
+    array1[7] == 13 && array1[8] == 13 || 
+    array1[7] == 14 && array1[8] == 14 || 
+    array1[7] == 15 && array1[8] == 15 ||
+    array1[7] == 16 && array1[8] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[8] == 1 && array1[9] == 1 || 
+    array1[8] == 2 && array1[9] == 2 || 
+    array1[8] == 3 && array1[9] == 3 || 
+    array1[8] == 4 && array1[9] == 4 || 
+    array1[8] == 5 && array1[9] == 5 || 
+    array1[8] == 6 && array1[9] == 6 || 
+    array1[8] == 7 && array1[9] == 7 || 
+    array1[8] == 8 && array1[9] == 8 || 
+    array1[8] == 9 && array1[9] == 9 || 
+    array1[8] == 10 && array1[9] == 10 || 
+    array1[8] == 11 && array1[9] == 11 || 
+    array1[8] == 12 && array1[9] == 12 || 
+    array1[8] == 13 && array1[9] == 13 || 
+    array1[8] == 14 && array1[9] == 14 || 
+    array1[8] == 15 && array1[9] == 15 ||
+    array1[8] == 16 && array1[9] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[9] == 1 && array1[10] == 1 || 
+    array1[9] == 2 && array1[10] == 2 || 
+    array1[9] == 3 && array1[10] == 3 || 
+    array1[9] == 4 && array1[10] == 4 || 
+    array1[9] == 5 && array1[10] == 5 || 
+    array1[9] == 6 && array1[10] == 6 || 
+    array1[9] == 7 && array1[10] == 7 || 
+    array1[9] == 8 && array1[10] == 8 || 
+    array1[9] == 9 && array1[10] == 9 || 
+    array1[9] == 10 && array1[10] == 10 || 
+    array1[9] == 11 && array1[10] == 11 || 
+    array1[9] == 12 && array1[10] == 12 || 
+    array1[9] == 13 && array1[10] == 13 || 
+    array1[9] == 14 && array1[10] == 14 || 
+    array1[9] == 15 && array1[10] == 15 ||
+    array1[9] == 16 && array1[10] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[10] == 1 && array1[11] == 1 || 
+    array1[10] == 2 && array1[11] == 2 || 
+    array1[10] == 3 && array1[11] == 3 || 
+    array1[10] == 4 && array1[11] == 4 || 
+    array1[10] == 5 && array1[11] == 5 || 
+    array1[10] == 6 && array1[11] == 6 || 
+    array1[10] == 7 && array1[11] == 7 || 
+    array1[10] == 8 && array1[11] == 8 || 
+    array1[10] == 9 && array1[11] == 9 || 
+    array1[10] == 10 && array1[11] == 10 || 
+    array1[10] == 11 && array1[11] == 11 || 
+    array1[10] == 12 && array1[11] == 12 || 
+    array1[10] == 13 && array1[11] == 13 || 
+    array1[10] == 14 && array1[11] == 14 || 
+    array1[10] == 15 && array1[11] == 15 ||
+    array1[10] == 16 && array1[11] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[11] == 1 && array1[12] == 1 || 
+    array1[11] == 2 && array1[12] == 2 || 
+    array1[11] == 3 && array1[12] == 3 || 
+    array1[11] == 4 && array1[12] == 4 || 
+    array1[11] == 5 && array1[12] == 5 || 
+    array1[11] == 6 && array1[12] == 6 || 
+    array1[11] == 7 && array1[12] == 7 || 
+    array1[11] == 8 && array1[12] == 8 || 
+    array1[11] == 9 && array1[12] == 9 || 
+    array1[11] == 10 && array1[12] == 10 || 
+    array1[11] == 11 && array1[12] == 11 || 
+    array1[11] == 12 && array1[12] == 12 || 
+    array1[11] == 13 && array1[12] == 13 || 
+    array1[11] == 14 && array1[12] == 14 || 
+    array1[11] == 15 && array1[12] == 15 ||
+    array1[11] == 16 && array1[12] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[12] == 1 && array1[13] == 1 || 
+    array1[12] == 2 && array1[13] == 2 || 
+    array1[12] == 3 && array1[13] == 3 || 
+    array1[12] == 4 && array1[13] == 4 || 
+    array1[12] == 5 && array1[13] == 5 || 
+    array1[12] == 6 && array1[13] == 6 || 
+    array1[12] == 7 && array1[13] == 7 || 
+    array1[12] == 8 && array1[13] == 8 || 
+    array1[12] == 9 && array1[13] == 9 || 
+    array1[12] == 10 && array1[13] == 10 || 
+    array1[12] == 11 && array1[13] == 11 || 
+    array1[12] == 12 && array1[13] == 12 || 
+    array1[12] == 13 && array1[13] == 13 || 
+    array1[12] == 14 && array1[13] == 14 || 
+    array1[12] == 15 && array1[13] == 15 ||
+    array1[12] == 16 && array1[13] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[13] == 1 && array1[14] == 1 || 
+    array1[13] == 2 && array1[14] == 2 || 
+    array1[13] == 3 && array1[14] == 3 || 
+    array1[13] == 4 && array1[14] == 4 || 
+    array1[13] == 5 && array1[14] == 5 || 
+    array1[13] == 6 && array1[14] == 6 || 
+    array1[13] == 7 && array1[14] == 7 || 
+    array1[13] == 8 && array1[14] == 8 || 
+    array1[13] == 9 && array1[14] == 9 || 
+    array1[13] == 10 && array1[14] == 10 || 
+    array1[13] == 11 && array1[14] == 11 || 
+    array1[13] == 12 && array1[14] == 12 || 
+    array1[13] == 13 && array1[14] == 13 || 
+    array1[13] == 14 && array1[14] == 14 || 
+    array1[13] == 15 && array1[14] == 15 ||
+    array1[13] == 16 && array1[14] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[14] == 1 && array1[15] == 1 || 
+    array1[14] == 2 && array1[15] == 2 || 
+    array1[14] == 3 && array1[15] == 3 || 
+    array1[14] == 4 && array1[15] == 4 || 
+    array1[14] == 5 && array1[15] == 5 || 
+    array1[14] == 6 && array1[15] == 6 || 
+    array1[14] == 7 && array1[15] == 7 || 
+    array1[14] == 8 && array1[15] == 8 || 
+    array1[14] == 9 && array1[15] == 9 || 
+    array1[14] == 10 && array1[15] == 10 || 
+    array1[14] == 11 && array1[15] == 11 || 
+    array1[14] == 12 && array1[15] == 12 || 
+    array1[14] == 13 && array1[15] == 13 || 
+    array1[14] == 14 && array1[15] == 14 || 
+    array1[14] == 15 && array1[15] == 15 ||
+    array1[14] == 16 && array1[15] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[15] == 1 && array1[16] == 1 || 
+    array1[15] == 2 && array1[16] == 2 || 
+    array1[15] == 3 && array1[16] == 3 || 
+    array1[15] == 4 && array1[16] == 4 || 
+    array1[15] == 5 && array1[16] == 5 || 
+    array1[15] == 6 && array1[16] == 6 || 
+    array1[15] == 7 && array1[16] == 7 || 
+    array1[15] == 8 && array1[16] == 8 || 
+    array1[15] == 9 && array1[16] == 9 || 
+    array1[15] == 10 && array1[16] == 10 || 
+    array1[15] == 11 && array1[16] == 11 || 
+    array1[15] == 12 && array1[16] == 12 || 
+    array1[15] == 13 && array1[16] == 13 || 
+    array1[15] == 14 && array1[16] == 14 || 
+    array1[15] == 15 && array1[16] == 15 ||
+    array1[15] == 16 && array1[16] == 16 ) {
+        console.log("two in a row!")
+        document.getElementById("achievements2").innerHTML = '<s>Two in a row</s> (Complete)'
+        document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+
+
+    if (array1[0] == 1 && array1[1] == 1 && array1[2] == 1 || 
+    array1[0] == 2 && array1[1] == 2 && array1[2] == 2 || 
+    array1[0] == 3 && array1[1] == 3 && array1[2] == 3 || 
+    array1[0] == 4 && array1[1] == 4 && array1[2] == 4 || 
+    array1[0] == 5 && array1[1] == 5 && array1[2] == 5 || 
+    array1[0] == 6 && array1[1] == 6 && array1[2] == 6 || 
+    array1[0] == 7 && array1[1] == 7 && array1[2] == 7 || 
+    array1[0] == 8 && array1[1] == 8 && array1[2] == 8 || 
+    array1[0] == 9 && array1[1] == 9 && array1[2] == 9 || 
+    array1[0] == 10 && array1[1] == 10 && array1[2] == 10 || 
+    array1[0] == 11 && array1[1] == 11 && array1[2] == 11 || 
+    array1[0] == 12 && array1[1] == 12 && array1[2] == 12 || 
+    array1[0] == 13 && array1[1] == 13 && array1[2] == 13 || 
+    array1[0] == 14 && array1[1] == 14 && array1[2] == 14 || 
+    array1[0] == 15 && array1[1] == 15 && array1[2] == 15 ||
+     array1[0] == 16 && array1[1] == 16 && array1[2] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[1] == 1 && array1[2] == 1 && array1[3] == 1 || 
+    array1[1] == 2 && array1[2] == 2 && array1[3] == 2 || 
+    array1[1] == 3 && array1[2] == 3 && array1[3] == 3 || 
+    array1[1] == 4 && array1[2] == 4 && array1[3] == 4 || 
+    array1[1] == 5 && array1[2] == 5 && array1[3] == 5 || 
+    array1[1] == 6 && array1[2] == 6 && array1[3] == 6 || 
+    array1[1] == 7 && array1[2] == 7 && array1[3] == 7 || 
+    array1[1] == 8 && array1[2] == 8 && array1[3] == 8 || 
+    array1[1] == 9 && array1[2] == 9 && array1[3] == 9 || 
+    array1[1] == 10 && array1[2] == 10 && array1[3] == 10 || 
+    array1[1] == 11 && array1[2] == 11 && array1[3] == 11 || 
+    array1[1] == 12 && array1[2] == 12 && array1[3] == 12 || 
+    array1[1] == 13 && array1[2] == 13 && array1[3] == 13 || 
+    array1[1] == 14 && array1[2] == 14 && array1[3] == 14 || 
+    array1[1] == 15 && array1[2] == 15 && array1[3] == 15 ||
+     array1[1] == 16 && array1[2] == 16 && array1[3] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[2] == 1 && array1[3] == 1 && array1[4] == 1 || 
+    array1[2] == 2 && array1[3] == 2 && array1[4] == 2 || 
+    array1[2] == 3 && array1[3] == 3 && array1[4] == 3 || 
+    array1[2] == 4 && array1[3] == 4 && array1[4] == 4 || 
+    array1[2] == 5 && array1[3] == 5 && array1[4] == 5 || 
+    array1[2] == 6 && array1[3] == 6 && array1[4] == 6 || 
+    array1[2] == 7 && array1[3] == 7 && array1[4] == 7 || 
+    array1[2] == 8 && array1[3] == 8 && array1[4] == 8 || 
+    array1[2] == 9 && array1[3] == 9 && array1[4] == 9 || 
+    array1[2] == 10 && array1[3] == 10 && array1[4] == 10 || 
+    array1[2] == 11 && array1[3] == 11 && array1[4] == 11 || 
+    array1[2] == 12 && array1[3] == 12 && array1[4] == 12 || 
+    array1[2] == 13 && array1[3] == 13 && array1[4] == 13 || 
+    array1[2] == 14 && array1[3] == 14 && array1[4] == 14 || 
+    array1[2] == 15 && array1[3] == 15 && array1[4] == 15 ||
+     array1[2] == 16 && array1[3] == 16 && array1[4] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[3] == 1 && array1[4] == 1 && array1[5] == 1 || 
+    array1[3] == 2 && array1[4] == 2 && array1[5] == 2 || 
+    array1[3] == 3 && array1[4] == 3 && array1[5] == 3 || 
+    array1[3] == 4 && array1[4] == 4 && array1[5] == 4 || 
+    array1[3] == 5 && array1[4] == 5 && array1[5] == 5 || 
+    array1[3] == 6 && array1[4] == 6 && array1[5] == 6 || 
+    array1[3] == 7 && array1[4] == 7 && array1[5] == 7 || 
+    array1[3] == 8 && array1[4] == 8 && array1[5] == 8 || 
+    array1[3] == 9 && array1[4] == 9 && array1[5] == 9 || 
+    array1[3] == 10 && array1[4] == 10 && array1[5] == 10 || 
+    array1[3] == 11 && array1[4] == 11 && array1[5] == 11 || 
+    array1[3] == 12 && array1[4] == 12 && array1[5] == 12 || 
+    array1[3] == 13 && array1[4] == 13 && array1[5] == 13 || 
+    array1[3] == 14 && array1[4] == 14 && array1[5] == 14 || 
+    array1[3] == 15 && array1[4] == 15 && array1[5] == 15 ||
+     array1[3] == 16 && array1[4] == 16 && array1[5] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+        if (array1[4] == 1 && array1[5] == 1 && array1[6] == 1 || 
+    array1[4] == 2 && array1[5] == 2 && array1[6] == 2 || 
+    array1[4] == 3 && array1[5] == 3 && array1[6] == 3 || 
+    array1[4] == 4 && array1[5] == 4 && array1[6] == 4 || 
+    array1[4] == 5 && array1[5] == 5 && array1[6] == 5 || 
+    array1[4] == 6 && array1[5] == 6 && array1[6] == 6 || 
+    array1[4] == 7 && array1[5] == 7 && array1[6] == 7 || 
+    array1[4] == 8 && array1[5] == 8 && array1[6] == 8 || 
+    array1[4] == 9 && array1[5] == 9 && array1[6] == 9 || 
+    array1[4] == 10 && array1[5] == 10 && array1[6] == 10 || 
+    array1[4] == 11 && array1[5] == 11 && array1[6] == 11 || 
+    array1[4] == 12 && array1[5] == 12 && array1[6] == 12 || 
+    array1[4] == 13 && array1[5] == 13 && array1[6] == 13 || 
+    array1[4] == 14 && array1[5] == 14 && array1[6] == 14 || 
+    array1[4] == 15 && array1[5] == 15 && array1[6] == 15 ||
+     array1[4] == 16 && array1[5] == 16 && array1[6] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[5] == 1 && array1[6] == 1 && array1[7] == 1 || 
+    array1[5] == 2 && array1[6] == 2 && array1[7] == 2 || 
+    array1[5] == 3 && array1[6] == 3 && array1[7] == 3 || 
+    array1[5] == 4 && array1[6] == 4 && array1[7] == 4 || 
+    array1[5] == 5 && array1[6] == 5 && array1[7] == 5 || 
+    array1[5] == 6 && array1[6] == 6 && array1[7] == 6 || 
+    array1[5] == 7 && array1[6] == 7 && array1[7] == 7 || 
+    array1[5] == 8 && array1[6] == 8 && array1[7] == 8 || 
+    array1[5] == 9 && array1[6] == 9 && array1[7] == 9 || 
+    array1[5] == 10 && array1[6] == 10 && array1[7] == 10 || 
+    array1[5] == 11 && array1[6] == 11 && array1[7] == 11 || 
+    array1[5] == 12 && array1[6] == 12 && array1[7] == 12 || 
+    array1[5] == 13 && array1[6] == 13 && array1[7] == 13 || 
+    array1[5] == 14 && array1[6] == 14 && array1[7] == 14 || 
+    array1[5] == 15 && array1[6] == 15 && array1[7] == 15 ||
+     array1[5] == 16 && array1[6] == 16 && array1[7] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[6] == 1 && array1[7] == 1 && array1[8] == 1 || 
+    array1[6] == 2 && array1[7] == 2 && array1[8] == 2 || 
+    array1[6] == 3 && array1[7] == 3 && array1[8] == 3 || 
+    array1[6] == 4 && array1[7] == 4 && array1[8] == 4 || 
+    array1[6] == 5 && array1[7] == 5 && array1[8] == 5 || 
+    array1[6] == 6 && array1[7] == 6 && array1[8] == 6 || 
+    array1[6] == 7 && array1[7] == 7 && array1[8] == 7 || 
+    array1[6] == 8 && array1[7] == 8 && array1[8] == 8 || 
+    array1[6] == 9 && array1[7] == 9 && array1[8] == 9 || 
+    array1[6] == 10 && array1[7] == 10 && array1[8] == 10 || 
+    array1[6] == 11 && array1[7] == 11 && array1[8] == 11 || 
+    array1[6] == 12 && array1[7] == 12 && array1[8] == 12 || 
+    array1[6] == 13 && array1[7] == 13 && array1[8] == 13 || 
+    array1[6] == 14 && array1[7] == 14 && array1[8] == 14 || 
+    array1[6] == 15 && array1[7] == 15 && array1[8] == 15 ||
+     array1[6] == 16 && array1[7] == 16 && array1[8] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[7] == 1 && array1[8] == 1 && array1[9] == 1 || 
+    array1[7] == 2 && array1[8] == 2 && array1[9] == 2 || 
+    array1[7] == 3 && array1[8] == 3 && array1[9] == 3 || 
+    array1[7] == 4 && array1[8] == 4 && array1[9] == 4 || 
+    array1[7] == 5 && array1[8] == 5 && array1[9] == 5 || 
+    array1[7] == 6 && array1[8] == 6 && array1[9] == 6 || 
+    array1[7] == 7 && array1[8] == 7 && array1[9] == 7 || 
+    array1[7] == 8 && array1[8] == 8 && array1[9] == 8 || 
+    array1[7] == 9 && array1[8] == 9 && array1[9] == 9 || 
+    array1[7] == 10 && array1[8] == 10 && array1[9] == 10 || 
+    array1[7] == 11 && array1[8] == 11 && array1[9] == 11 || 
+    array1[7] == 12 && array1[8] == 12 && array1[9] == 12 || 
+    array1[7] == 13 && array1[8] == 13 && array1[9] == 13 || 
+    array1[7] == 14 && array1[8] == 14 && array1[9] == 14 || 
+    array1[7] == 15 && array1[8] == 15 && array1[9] == 15 ||
+     array1[7] == 16 && array1[8] == 16 && array1[9] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[8] == 1 && array1[9] == 1 && array1[10] == 1 || 
+    array1[8] == 2 && array1[9] == 2 && array1[10] == 2 || 
+    array1[8] == 3 && array1[9] == 3 && array1[10] == 3 || 
+    array1[8] == 4 && array1[9] == 4 && array1[10] == 4 || 
+    array1[8] == 5 && array1[9] == 5 && array1[10] == 5 || 
+    array1[8] == 6 && array1[9] == 6 && array1[10] == 6 || 
+    array1[8] == 7 && array1[9] == 7 && array1[10] == 7 || 
+    array1[8] == 8 && array1[9] == 8 && array1[10] == 8 || 
+    array1[8] == 9 && array1[9] == 9 && array1[10] == 9 || 
+    array1[8] == 10 && array1[9] == 10 && array1[10] == 10 || 
+    array1[8] == 11 && array1[9] == 11 && array1[10] == 11 || 
+    array1[8] == 12 && array1[9] == 12 && array1[10] == 12 || 
+    array1[8] == 13 && array1[9] == 13 && array1[10] == 13 || 
+    array1[8] == 14 && array1[9] == 14 && array1[10] == 14 || 
+    array1[8] == 15 && array1[9] == 15 && array1[10] == 15 ||
+     array1[8] == 16 && array1[9] == 16 && array1[10] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[9] == 1 && array1[10] == 1 && array1[11] == 1 || 
+    array1[9] == 2 && array1[10] == 2 && array1[11] == 2 || 
+    array1[9] == 3 && array1[10] == 3 && array1[11] == 3 || 
+    array1[9] == 4 && array1[10] == 4 && array1[11] == 4 || 
+    array1[9] == 5 && array1[10] == 5 && array1[11] == 5 || 
+    array1[9] == 6 && array1[10] == 6 && array1[11] == 6 || 
+    array1[9] == 7 && array1[10] == 7 && array1[11] == 7 || 
+    array1[9] == 8 && array1[10] == 8 && array1[11] == 8 || 
+    array1[9] == 9 && array1[10] == 9 && array1[11] == 9 || 
+    array1[9] == 10 && array1[10] == 10 && array1[11] == 10 || 
+    array1[9] == 11 && array1[10] == 11 && array1[11] == 11 || 
+    array1[9] == 12 && array1[10] == 12 && array1[11] == 12 || 
+    array1[9] == 13 && array1[10] == 13 && array1[11] == 13 || 
+    array1[9] == 14 && array1[10] == 14 && array1[11] == 14 || 
+    array1[9] == 15 && array1[10] == 15 && array1[11] == 15 ||
+     array1[9] == 16 && array1[10] == 16 && array1[11] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[10] == 1 && array1[11] == 1 && array1[12] == 1 || 
+    array1[10] == 2 && array1[11] == 2 && array1[12] == 2 || 
+    array1[10] == 3 && array1[11] == 3 && array1[12] == 3 || 
+    array1[10] == 4 && array1[11] == 4 && array1[12] == 4 || 
+    array1[10] == 5 && array1[11] == 5 && array1[12] == 5 || 
+    array1[10] == 6 && array1[11] == 6 && array1[12] == 6 || 
+    array1[10] == 7 && array1[11] == 7 && array1[12] == 7 || 
+    array1[10] == 8 && array1[11] == 8 && array1[12] == 8 || 
+    array1[10] == 9 && array1[11] == 9 && array1[12] == 9 || 
+    array1[10] == 10 && array1[11] == 10 && array1[12] == 10 || 
+    array1[10] == 11 && array1[11] == 11 && array1[12] == 11 || 
+    array1[10] == 12 && array1[11] == 12 && array1[12] == 12 || 
+    array1[10] == 13 && array1[11] == 13 && array1[12] == 13 || 
+    array1[10] == 14 && array1[11] == 14 && array1[12] == 14 || 
+    array1[10] == 15 && array1[11] == 15 && array1[12] == 15 ||
+     array1[10] == 16 && array1[11] == 16 && array1[12] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[11] == 1 && array1[12] == 1 && array1[13] == 1 || 
+    array1[11] == 2 && array1[12] == 2 && array1[13] == 2 || 
+    array1[11] == 3 && array1[12] == 3 && array1[13] == 3 || 
+    array1[11] == 4 && array1[12] == 4 && array1[13] == 4 || 
+    array1[11] == 5 && array1[12] == 5 && array1[13] == 5 || 
+    array1[11] == 6 && array1[12] == 6 && array1[13] == 6 || 
+    array1[11] == 7 && array1[12] == 7 && array1[13] == 7 || 
+    array1[11] == 8 && array1[12] == 8 && array1[13] == 8 || 
+    array1[11] == 9 && array1[12] == 9 && array1[13] == 9 || 
+    array1[11] == 10 && array1[12] == 10 && array1[13] == 10 || 
+    array1[11] == 11 && array1[12] == 11 && array1[13] == 11 || 
+    array1[11] == 12 && array1[12] == 12 && array1[13] == 12 || 
+    array1[11] == 13 && array1[12] == 13 && array1[13] == 13 || 
+    array1[11] == 14 && array1[12] == 14 && array1[13] == 14 || 
+    array1[11] == 15 && array1[12] == 15 && array1[13] == 15 ||
+     array1[11] == 16 && array1[12] == 16 && array1[13] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[12] == 1 && array1[13] == 1 && array1[14] == 1 || 
+    array1[12] == 2 && array1[13] == 2 && array1[14] == 2 || 
+    array1[12] == 3 && array1[13] == 3 && array1[14] == 3 || 
+    array1[12] == 4 && array1[13] == 4 && array1[14] == 4 || 
+    array1[12] == 5 && array1[13] == 5 && array1[14] == 5 || 
+    array1[12] == 6 && array1[13] == 6 && array1[14] == 6 || 
+    array1[12] == 7 && array1[13] == 7 && array1[14] == 7 || 
+    array1[12] == 8 && array1[13] == 8 && array1[14] == 8 || 
+    array1[12] == 9 && array1[13] == 9 && array1[14] == 9 || 
+    array1[12] == 10 && array1[13] == 10 && array1[14] == 10 || 
+    array1[12] == 11 && array1[13] == 11 && array1[14] == 11 || 
+    array1[12] == 12 && array1[13] == 12 && array1[14] == 12 || 
+    array1[12] == 13 && array1[13] == 13 && array1[14] == 13 || 
+    array1[12] == 14 && array1[13] == 14 && array1[14] == 14 || 
+    array1[12] == 15 && array1[13] == 15 && array1[14] == 15 ||
+     array1[12] == 16 && array1[13] == 16 && array1[14] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[13] == 1 && array1[14] == 1 && array1[15] == 1 || 
+    array1[13] == 2 && array1[14] == 2 && array1[15] == 2 || 
+    array1[13] == 3 && array1[14] == 3 && array1[15] == 3 || 
+    array1[13] == 4 && array1[14] == 4 && array1[15] == 4 || 
+    array1[13] == 5 && array1[14] == 5 && array1[15] == 5 || 
+    array1[13] == 6 && array1[14] == 6 && array1[15] == 6 || 
+    array1[13] == 7 && array1[14] == 7 && array1[15] == 7 || 
+    array1[13] == 8 && array1[14] == 8 && array1[15] == 8 || 
+    array1[13] == 9 && array1[14] == 9 && array1[15] == 9 || 
+    array1[13] == 10 && array1[14] == 10 && array1[15] == 10 || 
+    array1[13] == 11 && array1[14] == 11 && array1[15] == 11 || 
+    array1[13] == 12 && array1[14] == 12 && array1[15] == 12 || 
+    array1[13] == 13 && array1[14] == 13 && array1[15] == 13 || 
+    array1[13] == 14 && array1[14] == 14 && array1[15] == 14 || 
+    array1[13] == 15 && array1[14] == 15 && array1[15] == 15 ||
+     array1[13] == 16 && array1[14] == 16 && array1[15] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    if (array1[14] == 1 && array1[15] == 1 && array1[16] == 1 || 
+    array1[14] == 2 && array1[15] == 2 && array1[16] == 2 || 
+    array1[14] == 3 && array1[15] == 3 && array1[16] == 3 || 
+    array1[14] == 4 && array1[15] == 4 && array1[16] == 4 || 
+    array1[14] == 5 && array1[15] == 5 && array1[16] == 5 || 
+    array1[14] == 6 && array1[15] == 6 && array1[16] == 6 || 
+    array1[14] == 7 && array1[15] == 7 && array1[16] == 7 || 
+    array1[14] == 8 && array1[15] == 8 && array1[16] == 8 || 
+    array1[14] == 9 && array1[15] == 9 && array1[16] == 9 || 
+    array1[14] == 10 && array1[15] == 10 && array1[16] == 10 || 
+    array1[14] == 11 && array1[15] == 11 && array1[16] == 11 || 
+    array1[14] == 12 && array1[15] == 12 && array1[16] == 12 || 
+    array1[14] == 13 && array1[15] == 13 && array1[16] == 13 || 
+    array1[14] == 14 && array1[15] == 14 && array1[16] == 14 || 
+    array1[14] == 15 && array1[15] == 15 && array1[16] == 15 ||
+     array1[14] == 16 && array1[15] == 16 && array1[16] == 16 ) {
+        console.log("THREE IN A ROW!")
+        document.getElementById("achievements3").innerHTML = '<s>Three in a row<s/> (Complete)'
+            document.getElementById("prompt2").innerHTML = "Achievement Completed!"
+
+    }
+    var winAchievement = 0;
+    if (winAchievement == 0) {
+        if (array1.length == 1) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (1/10)'
+    }
+    if (array1.length == 2) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (2/10)'
+    }
+    if (array1.length == 3) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (3/10)'
+    }
+    if (array1.length == 4) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (4/10)'
+    }
+    if (array1.length == 5) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (5/10)'
+    }
+    if (array1.length == 6) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (6/10)'
+    }
+    if (array1.length == 7) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (7/10)'
+    }
+    if (array1.length == 8) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (8/10)'
+    }
+    if (array1.length == 9) {
+        document.getElementById("achievements4").innerHTML = 'Make it to round 10 (9/10)'
+    }
+    if (array1.length == 10) {
+        winAchievement++;
+        document.getElementById("achievements4").innerHTML = '<s>Make it to round 10</s> (Completed)'
+    }
+    }
+    
+    
+
+
+
     document.getElementById('block1').innerHTML = ""
     document.getElementById('block2').innerHTML = ""
     document.getElementById('block3').innerHTML = ""
@@ -452,6 +1224,7 @@ function funcy(varr) {
 
     }
     if (array1.length > 19) {
+        document.getElementById("achievements6").innerHTML = "<s>Beat the whole game</s> (Completed)";
         document.getElementById("prompt3").innerHTML = "You've beat the entire game!";
         document.getElementById('Possibilities').innerHTML = possibilities[19] +' Possibilities';
         document.getElementById('boody').style.backgroundColor = "rgb(4, 35, 15)";
@@ -533,68 +1306,82 @@ function funcy(varr) {
                  console.log(el);
                  freezer()
             if( el == 1) {
-                
+                same1++;
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 2) {
+                same2++;
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 3) {
+                same3++;
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 1000); 
             }
             if( el == 4) {
-
+                same4++;
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 1000); 
             }
             if( el == 5) {
+                same5++;
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 6) {
+                same6++;
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 7) {
+                same7++;
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 8) {
+                same8++;
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 9) {
+                same9++;
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 10) {
+                same10++;
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 11) {
+                same11++;
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 12) {
+                same12++;
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 13) {
+                same13++;
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 14) {
+                same14++;
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 15) {
+                same15++;
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
             if( el == 16) {
+                same16++;
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 100);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 1000);
             }
@@ -677,68 +1464,87 @@ function funcy(varr) {
              promise = promise.then(function () {
                  console.log(el);
                  freezer();
+                     
+
+
+
             if( el == 1) {
+                same1++;
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 2) {
+                same2++;
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 3) {
+                same3++;
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 400); 
             }
             if( el == 4) {
-
+                same4++;
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 400); 
             }
             if( el == 5) {
+                same5++;
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 6) {
+                same6++;
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 7) {
+                same7++;
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 8) {
+                same8++;
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 9) {
+                same9++;
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 10) {
+                same10++;
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 11) {
+                same11++;
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 12) {
+                same12++;
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 13) {
+                same13++;
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 14) {
+                same14++;
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 15) {
+                same15++;
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
             if( el == 16) {
+                same16++;
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 50);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 400);
             }
@@ -822,67 +1628,82 @@ function funcy(varr) {
                  console.log(el);
                  freezer();
             if( el == 1) {
+                same1++;
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 2) {
+                same2++;
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 3) {
+                same3++;
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 250); 
             }
             if( el == 4) {
-
+                same4++;
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 250); 
             }
             if( el == 5) {
+                same5++;
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 6) {
+                same6++;
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 7) {
+                same7++;
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 8) {
+                same8++;
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 9) {
+                same9++;
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 10) {
+                same10++;
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 11) {
+                same11++;
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 12) {
+                same12++;
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 13) {
+                same13++;
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 14) {
+                same14++;
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 15) {
+                same15++;
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
             if( el == 16) {
+                same16++;
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 250);
             }
@@ -967,67 +1788,82 @@ function funcy(varr) {
                  console.log(el);
                  freezer();
             if( el == 1) {
+                same1++;
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 2) {
+                same2++;
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 3) {
+                same3++;
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 15);
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 200); 
             }
             if( el == 4) {
-
+                same4++;
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 200); 
             }
             if( el == 5) {
+                same5++;
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 6) {
+                same6++;
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 7) {
+                same7++;
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 8) {
+                same8++;
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 9) {
+                same9++;
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 15);
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 10) {
+                same10++;
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 11) {
+                same11++;
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 12) {
+                same12++;
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 13) {
+                same13++;
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 14) {
+                same14++;
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 15) {
+                same15++;
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
             if( el == 16) {
+                same16++;
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 200);
             }
@@ -1111,67 +1947,82 @@ function funcy(varr) {
                  console.log(el);
                  freezer();
             if( el == 1) {
+                same1++;
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(255, 97, 244)"}, 20); //colorize function switch
                 var myTimeout = setTimeout(function () {block1.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 2) {
+                same2++;
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block2.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 3) {
+                same3++;
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block3.style.backgroundColor="rgb(32,32,32)"}, 120); 
             }
             if( el == 4) {
-
+                same4++;
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(255, 97, 244)"}, 15);
                 var myTimeout = setTimeout(function () {block4.style.backgroundColor="rgb(32,32,32)"}, 120); 
             }
             if( el == 5) {
+                same5++;
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block5.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 6) {
+                same6++;
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block6.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 7) {
+                same7++;
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block7.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 8) {
+                same8++;
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(255, 97, 244)"}, 15);
                 var myTimeout = setTimeout(function () {block8.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 9) {
+                same9++;
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block9.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 10) {
+                same10++;
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block10.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 11) {
+                same11++;
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block11.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 12) {
+                same12++;
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block12.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 13) {
+                same13++;
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block13.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 14) {
+                same14++;
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block14.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 15) {
+                same15++;
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block15.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
             if( el == 16) {
+                same16++;
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(255, 97, 244)"}, 20);
                 var myTimeout = setTimeout(function () {block16.style.backgroundColor="rgb(32,32,32)"}, 120);
             }
@@ -1608,9 +2459,12 @@ function funcy(varr) {
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X"; 
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
             nextRound();
         })
 
@@ -1876,9 +2730,13 @@ function funcy(varr) {
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+ 
 
             nextRound();
         })
@@ -2153,9 +3011,12 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -2435,9 +3296,12 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -2716,9 +3580,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -2997,9 +3865,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -3270,9 +4142,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -3543,9 +4419,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -3816,9 +4696,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -4089,9 +4973,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -4362,9 +5250,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -4635,9 +5527,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -4908,9 +5804,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -5181,9 +6081,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -5454,9 +6358,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
@@ -5727,9 +6635,13 @@ nextRound();
                 console.log(array1)
             }          
             if (array1[0] != array2[0]) {
-                document.getElementById("block" + array1[0]).innerHTML = "X";
+                if (array1[0] > 0) {
+                    document.getElementById("block" + array1[0]).innerHTML = "X";
+                }
                 lose();
             }
+
+
 
             if (array1.toString() === array2.toString()) {
                     var power = Math.ceil(Math.random() * 16);
