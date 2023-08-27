@@ -196,6 +196,7 @@ function lose() {
     if ((array1.length - 1) > array3[0]) {
         highest++;
         document.getElementById("prompt2").innerHTML = "New Highest Score!"
+    }
         array3.push([array1.length - 1])
     array3.sort(compareFunction);
     function compareFunction(a, b) {
@@ -209,7 +210,7 @@ function lose() {
         }
 
     })
-}
+
     } 
 
 
