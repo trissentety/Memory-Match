@@ -78,6 +78,20 @@ textarea::-webkit-scrollbar-thumb {
     right: 10%;
     color: rgb(82, 60, 111);
 }
+#achievements8 {
+    display: flex;
+    position: absolute;
+    top: 26%;
+    right: 10%;
+    color: rgb(82, 60, 111);
+}
+#achievements9 {
+    display: flex;
+    position: absolute;
+    top: 29%;
+    right: 10%;
+    color: rgb(82, 60, 111);
+}
 
 #prompt {
     font-size: 40px;
