@@ -158,13 +158,15 @@ var same14 = 0;
 var same15 = 0;
 var same16 = 0;
 var clicky = 0;
-    var highest = 0;
+var highest = 0;
+var winAchievement = 0;
+var winAchievement2 = 0;
 
 
 function lose() {
     play++;
     if (play < 25) {
-        document.getElementById("achievements5").innerHTML = "Play 25 games (" + play + "/25)";
+        document.getElementById("achievements5").innerHTML = "Play 25 games(" + play + "/25)";
     }
     count1 = 0
     count2 = 0
@@ -1103,8 +1105,7 @@ function funcy(varr) {
             document.getElementById("prompt2").innerHTML = "Achievement Completed!"
 
     }
-    var winAchievement = 0;
-    var winAchievement2 = 0;
+
     if (winAchievement == 0) {
         if (array1.length == 1) {
         document.getElementById("achievements4").innerHTML = 'Make it to round 10 (1/10)'
@@ -1138,6 +1139,7 @@ function funcy(varr) {
         document.getElementById("achievements4").innerHTML = '<s>Make it to round 10</s> (Completed)'
     }
     }
+    if (winAchievement2 == 0) {
     if (array1.length == 10) {
         document.getElementById("achievements9").innerHTML = 'Make it to round 15 (10/15)'
     }
@@ -1155,8 +1157,9 @@ function funcy(varr) {
     }
         if (array1.length == 15) {
         document.getElementById("achievements9").innerHTML = '<s>Make it to round 10</s> (Completed)'
-        winAchievement++;
+        winAchievement2++;
     }
+}
     
     
 
