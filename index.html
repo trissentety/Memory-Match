@@ -12,6 +12,8 @@
     <div id="achievements5">Play 25 rounds</div>
     <div id="achievements6">Beat the whole game</div>
     <div id="achievements7">Light three Same squares in one game</div>
+    <div id="achievements8">Beat the top high score 3 times</div>
+    <div id="achievements9">Make it to round 15</div>
 </div>
 
 <h1>Memory Match</h1>
@@ -155,6 +157,9 @@ var same13 = 0;
 var same14 = 0;
 var same15 = 0;
 var same16 = 0;
+var clicky = 0;
+    var highest = 0;
+
 
 function lose() {
     play++;
@@ -184,14 +189,14 @@ function lose() {
         return b - a;
     }
     document.getElementById("prompt").innerHTML = "Game Over"
+
     
     
 
     if ((array1.length - 1) > array3[0]) {
+        highest++;
         document.getElementById("prompt2").innerHTML = "New Highest Score!"
-    } 
-        
-    array3.push([array1.length - 1])
+        array3.push([array1.length - 1])
     array3.sort(compareFunction);
     function compareFunction(a, b) {
         return b - a;
@@ -205,6 +210,11 @@ function lose() {
 
     })
 }
+    } 
+
+
+        
+    
 
 
 
@@ -415,6 +425,26 @@ function melter () {
 var rate = 1;
 var starter = 1
 function funcy(varr) {
+
+
+    if (highest == 1 && clicky == 0) {
+            clicky++
+            document.getElementById("achievements8").innerHTML = "<s>Beat the highest score 3 times</s> (" + highest + "/3)";
+            document.getElementById("prompt2").innerHTML = "New Highest Score!";
+        }
+        if (highest == 2 && clicky == 1) {
+            clicky++
+            document.getElementById("achievements8").innerHTML = "<s>Beat the highest score 3 times</s> (" + highest + "/3)";
+            document.getElementById("prompt2").innerHTML = "New Highest Score!";
+        }
+        if (highest >= 3 && clicky == 2) {
+            clicky++
+            document.getElementById("achievements8").innerHTML = "<s>Beat the highest score 3 times</s> (Complete)";
+            document.getElementById("prompt2").innerHTML = "New Highest Score!";
+        }
+
+
+
 
     if (play >= 25) {
         document.getElementById("achievements5").innerHTML = "<s>Play 25 rounds</s> (Complete)"
@@ -1073,6 +1103,7 @@ function funcy(varr) {
 
     }
     var winAchievement = 0;
+    var winAchievement2 = 0;
     if (winAchievement == 0) {
         if (array1.length == 1) {
         document.getElementById("achievements4").innerHTML = 'Make it to round 10 (1/10)'
@@ -1105,6 +1136,25 @@ function funcy(varr) {
         winAchievement++;
         document.getElementById("achievements4").innerHTML = '<s>Make it to round 10</s> (Completed)'
     }
+    }
+    if (array1.length == 10) {
+        document.getElementById("achievements9").innerHTML = 'Make it to round 15 (10/15)'
+    }
+    if (array1.length == 11) {
+        document.getElementById("achievements9").innerHTML = 'Make it to round 15 (11/15)'
+    }
+    if (array1.length == 12) {
+        document.getElementById("achievements9").innerHTML = 'Make it to round 15 (12/15)'
+    }
+        if (array1.length == 13) {
+        document.getElementById("achievements9").innerHTML = 'Make it to round 15 (13/15)'
+    }
+        if (array1.length == 14) {
+        document.getElementById("achievements9").innerHTML = 'Make it to round 15 (14/15)'
+    }
+        if (array1.length == 15) {
+        document.getElementById("achievements9").innerHTML = '<s>Make it to round 10</s> (Completed)'
+        winAchievement++;
     }
     
     
